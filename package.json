@@ -1,0 +1,19 @@
+{
+  "name": "new_nordic",
+  "version": "1.0.0",
+  "description": "New nordic website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Snær Seljan Þórodddson",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-css": "0.0.7",
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
