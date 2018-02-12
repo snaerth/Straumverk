@@ -261,8 +261,7 @@ module.exports = {
 	"hero": "_1mQLEeIaITF3Gp3HYTUANI",
 	"backgroundImage": "_1KdNIyeG1nE3ivcbNbKCut",
 	"background": "JeyZgAKGNLy4272YWDaxJ",
-	"colorWhite": "_2awTkq8WTAG_byCzRFaYCK",
-	"straumverk": "a7RgtrouVg99Rkc6GgA91"
+	"colorWhite": "_2awTkq8WTAG_byCzRFaYCK"
 };
 
 /***/ }),
@@ -315,7 +314,7 @@ var Hero = function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
         {
-          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('hero', 'is-medium', 'is-bold', __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.hero, className || __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.background),
+          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('hero', 'is-large', 'is-bold', __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.hero, className || __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.background),
           __source: {
             fileName: _jsxFileName,
             lineNumber: 11
@@ -811,7 +810,7 @@ var Index = function (_Component) {
               case 0:
                 lang = req.cookies.lang || 'is';
                 _context.next = 3;
-                return fetch(req.headers.referer + 'static/lang/' + lang + '.json');
+                return fetch("http://localhost:3000" + '/static/lang/' + lang + '.json');
 
               case 3:
                 res = _context.sent;

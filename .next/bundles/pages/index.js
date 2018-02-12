@@ -387,7 +387,7 @@ var Hero = function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
         {
-          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('hero', 'is-medium', 'is-bold', __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.hero, className || __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.background),
+          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('hero', 'is-large', 'is-bold', __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.hero, className || __WEBPACK_IMPORTED_MODULE_3__hero_css___default.a.background),
           __source: {
             fileName: _jsxFileName,
             lineNumber: 11
@@ -5832,7 +5832,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "._3LLXB2uDg4-QjrPH35fjS_ {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n}\n\n@keyframes _3f4MF2jDFW9ykVbF4QM6Go {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n._3f4MF2jDFW9ykVbF4QM6Go {\n  animation-name: _3f4MF2jDFW9ykVbF4QM6Go;\n}\n\n@keyframes _2ImajFULzfSyHFPNln-uG5 {\n  from {\n    opacity: 0;\n    transform: translate3d(-50px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n._2ImajFULzfSyHFPNln-uG5 {\n  animation-name: _2ImajFULzfSyHFPNln-uG5;\n}\n\n.m5elrJ2BVWq_HKkF1Fwmq {\n  transform: translate3d(-70px, 0, 0);\n  animation-delay: 0.3s;\n}\n\n._1mQLEeIaITF3Gp3HYTUANI {\n  position: relative;\n}\n\n._1KdNIyeG1nE3ivcbNbKCut {\n  width: 100%;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.JeyZgAKGNLy4272YWDaxJ::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.65;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(to right, #000 30%, transparent);\n}\n\n._2awTkq8WTAG_byCzRFaYCK {\n  color: #fff !important;\n}\n\n.a7RgtrouVg99Rkc6GgA91 {\n  position: relative;\n  left: -22px;\n}\n", "", {"version":3,"sources":["/Users/snaerthoroddsson/Projects/new_nordic/components/hero/hero.css"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,0BAA0B;CAC3B;;AAED;EACE;IACE,WAAW;GACZ;;EAED;IACE,WAAW;GACZ;CACF;;AAED;EACE,wCAAuB;CACxB;;AAED;EACE;IACE,WAAW;IACX,oCAAoC;GACrC;;EAED;IACE,WAAW;IACX,gBAAgB;GACjB;CACF;;AAED;EACE,wCAA2B;CAC5B;;AAED;EACE,oCAAoC;EACpC,sBAAsB;CACvB;;AAED;EACE,mBAAmB;CACpB;;AAED;EACE,YAAY;EACZ,6BAA6B;EAC7B,uBAAuB;CACxB;;AAED;EACE,YAAY;EACZ,mBAAmB;EACnB,OAAO;EACP,QAAQ;EACR,cAAc;EACd,YAAY;EACZ,aAAa;EACb,6DAA6D;CAC9D;;AAED;EACE,uBAAuB;CACxB;;AAED;EACE,mBAAmB;EACnB,YAAY;CACb","file":"hero.css","sourcesContent":[".animated {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n}\n\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n.fadeIn {\n  animation-name: fadeIn;\n}\n\n@keyframes fadeInLeft {\n  from {\n    opacity: 0;\n    transform: translate3d(-50px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeft {\n  animation-name: fadeInLeft;\n}\n\n.delay {\n  transform: translate3d(-70px, 0, 0);\n  animation-delay: 0.3s;\n}\n\n.hero {\n  position: relative;\n}\n\n.backgroundImage {\n  width: 100%;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.background::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.65;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(to right, #000 30%, transparent);\n}\n\n.colorWhite {\n  color: #fff !important;\n}\n\n.straumverk {\n  position: relative;\n  left: -22px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "._3LLXB2uDg4-QjrPH35fjS_ {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n}\n\n@keyframes _3f4MF2jDFW9ykVbF4QM6Go {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n._3f4MF2jDFW9ykVbF4QM6Go {\n  animation-name: _3f4MF2jDFW9ykVbF4QM6Go;\n}\n\n@keyframes _2ImajFULzfSyHFPNln-uG5 {\n  from {\n    opacity: 0;\n    transform: translate3d(-50px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n._2ImajFULzfSyHFPNln-uG5 {\n  animation-name: _2ImajFULzfSyHFPNln-uG5;\n}\n\n.m5elrJ2BVWq_HKkF1Fwmq {\n  transform: translate3d(-70px, 0, 0);\n  animation-delay: 0.3s;\n}\n\n._1mQLEeIaITF3Gp3HYTUANI {\n  position: relative;\n}\n\n._1KdNIyeG1nE3ivcbNbKCut {\n  width: 100%;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.JeyZgAKGNLy4272YWDaxJ::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.65;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(to right, #000 30%, transparent);\n}\n\n._2awTkq8WTAG_byCzRFaYCK {\n  color: #fff !important;\n}\n", "", {"version":3,"sources":["/Users/snaerthoroddsson/Projects/new_nordic/components/hero/hero.css"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,0BAA0B;CAC3B;;AAED;EACE;IACE,WAAW;GACZ;;EAED;IACE,WAAW;GACZ;CACF;;AAED;EACE,wCAAuB;CACxB;;AAED;EACE;IACE,WAAW;IACX,oCAAoC;GACrC;;EAED;IACE,WAAW;IACX,gBAAgB;GACjB;CACF;;AAED;EACE,wCAA2B;CAC5B;;AAED;EACE,oCAAoC;EACpC,sBAAsB;CACvB;;AAED;EACE,mBAAmB;CACpB;;AAED;EACE,YAAY;EACZ,6BAA6B;EAC7B,uBAAuB;CACxB;;AAED;EACE,YAAY;EACZ,mBAAmB;EACnB,OAAO;EACP,QAAQ;EACR,cAAc;EACd,YAAY;EACZ,aAAa;EACb,6DAA6D;CAC9D;;AAED;EACE,uBAAuB;CACxB","file":"hero.css","sourcesContent":[".animated {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n}\n\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n.fadeIn {\n  animation-name: fadeIn;\n}\n\n@keyframes fadeInLeft {\n  from {\n    opacity: 0;\n    transform: translate3d(-50px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeft {\n  animation-name: fadeInLeft;\n}\n\n.delay {\n  transform: translate3d(-70px, 0, 0);\n  animation-delay: 0.3s;\n}\n\n.hero {\n  position: relative;\n}\n\n.backgroundImage {\n  width: 100%;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.background::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.65;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(to right, #000 30%, transparent);\n}\n\n.colorWhite {\n  color: #fff !important;\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
@@ -5843,8 +5843,7 @@ exports.locals = {
 	"hero": "_1mQLEeIaITF3Gp3HYTUANI",
 	"backgroundImage": "_1KdNIyeG1nE3ivcbNbKCut",
 	"background": "JeyZgAKGNLy4272YWDaxJ",
-	"colorWhite": "_2awTkq8WTAG_byCzRFaYCK",
-	"straumverk": "a7RgtrouVg99Rkc6GgA91"
+	"colorWhite": "_2awTkq8WTAG_byCzRFaYCK"
 };
 
 /***/ }),
@@ -16378,7 +16377,7 @@ var Index = function (_Component) {
               case 0:
                 lang = req.cookies.lang || 'is';
                 _context.next = 3;
-                return fetch(req.headers.referer + 'static/lang/' + lang + '.json');
+                return fetch("http://localhost:3000" + '/static/lang/' + lang + '.json');
 
               case 3:
                 res = _context.sent;

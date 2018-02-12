@@ -9,7 +9,7 @@ class Hero extends Component {
 
     return (
       <section
-        className={classnames('hero', 'is-medium', 'is-bold', s.hero, className || s.background)}
+        className={classnames('hero', 'is-large', 'is-bold', s.hero, className || s.background)}
       >
         <div
           className={classnames('hero-body', s.backgroundImage)}
