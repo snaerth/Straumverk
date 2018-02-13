@@ -6,7 +6,7 @@ import { setTranslations } from '../common/actions';
 import { SET_LANG } from '../common/types';
 import configureStore from '../common/store';
 import Navigation from '../components/navigation';
-import Hero from '../components/hero';
+import Slider from '../components/slider';
 import 'isomorphic-unfetch';
 
 class Index extends Component {
@@ -30,10 +30,11 @@ class Index extends Component {
           <title>New Nordic</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="/static/css/bulma.min.css" />
+          <link rel="stylesheet" href="/static/css/base.css" />
         </Head>
         <main>
           <Navigation />
-          <Hero title="New Nordic company" />
+          <Slider />
         </main>
       </div>
     );
