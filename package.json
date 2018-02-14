@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "clean": "rimraf .next"
   },
   "author": "Snær Seljan Þórodddson",
   "license": "ISC",
@@ -27,5 +28,8 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
   }
 }
