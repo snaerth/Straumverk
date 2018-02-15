@@ -66,15 +66,12 @@ class Slider extends Component {
       frameFill: '#f1f1f1',
       frameSize: 0,
       paths: null,
-      isAnimating: false,
       dir: 'next',
     };
 
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.animateShapeOut = this.animateShapeOut.bind(this);
-    this.animateSlides = this.animateSlides.bind(this);
   }
 
   componentDidMount() {
@@ -129,7 +126,7 @@ class Slider extends Component {
     paths.initial = this.calculatePath('initial');
     paths.final = this.calculatePath('final');
     svg.setAttribute('viewbox', `0 0 ${rect.width} ${rect.height}`);
-    shape.setAttribute('d', isAnimating ? paths.final : paths.initial);
+    shape.setAttribute('d', this.isAnimating ? paths.final : paths.initial);
   }
 
   calculatePath(path = 'initial') {
@@ -163,111 +160,94 @@ class Slider extends Component {
   }
 
   navigate(dir = 'next') {
-    const { isAnimating, shape, animation, paths } = this.state;
+    const { shape, animation, paths } = this.state;
 
-    if (isAnimating) {
-      return false;
-    }
+    if (this.isAnimating) return false;
+    this.isAnimating = true;
 
-    this.setState({ isAnimating: true, dir }, () => {
-      const animateShapeIn = anime({
-        targets: shape,
-        duration: animation.shape.duration,
-        easing: animation.shape.easing.in,
-        d: paths.final,
-      });
-
-      animateShapeIn.finished.then(this.animateSlides).then(this.animateShapeOut);
-    });
-  }
-
-  animateShapeOut() {
-    const { shape, paths, animation, isAnimating } = this.state;
-
-    anime({
+    const animateShapeIn = anime({
       targets: shape,
       duration: animation.shape.duration,
-      delay: 150,
-      easing: animation.shape.easing.out,
-      d: paths.initial,
-      complete: () => {
-        this.setState({
-          isAnimating: false,
+      easing: animation.shape.easing.in,
+      d: paths.final,
+    });
+
+    const animateSlides = () => {
+      return new Promise((resolve, reject) => {
+        const {
+          shape,
+          isAnimating,
+          paths,
+          slides,
+          slideshow,
+          animation,
+          dir,
+          rect: { width },
+        } = this.state;
+        let { current } = this.state;
+        const currentSlide = slides.children[current];
+        const slidesTotal = slides.children.length;
+
+        anime({
+          targets: currentSlide,
+          duration: animation.slides.duration,
+          easing: animation.slides.easing,
+          translateX: dir === 'next' ? -1 * width : width,
+          complete: () => {
+            currentSlide.classList.remove(s.current);
+          },
         });
-      },
-    });
-  }
 
-  /**
-   * Animages slides
-   */
-  animateSlides() {
-    console.log('Jojo nothing happening');
-    return new Promise((resolve, reject) => {
-      const {
-        shape,
-        isAnimating,
-        paths,
-        slides,
-        slideshow,
-        animation,
-        dir,
-        rect: { width },
-      } = this.state;
-      console.log(this.state);
-      let { current } = this.state;
+        current =
+          dir === 'next'
+            ? current < slidesTotal - 1 ? current + 1 : 0
+            : current > 0 ? current - 1 : slidesTotal - 1;
 
-      if (isAnimating) return false;
+        const newSlide = slides.children[current];
+        newSlide.classList.add(s.current);
 
-      const currentSlide = slides.children[current];
-      const slidesTotal = slides.children.length;
+        anime({
+          targets: newSlide,
+          duration: animation.slides.duration,
+          easing: animation.slides.easing,
+          translateX: [dir === 'next' ? width : -1 * width, 0],
+        });
 
-      anime({
-        targets: currentSlide,
-        duration: animation.slides.duration,
-        easing: animation.slides.easing,
-        translateX: dir === 'next' ? -1 * width : width,
-        complete: () => {
-          currentSlide.classList.remove(s.current);
-        },
+        const newSlideImg = newSlide;
+        anime.remove(newSlideImg);
+
+        anime({
+          targets: newSlideImg,
+          duration: animation.slides.duration * 4,
+          easing: animation.slides.easing,
+          translateX: [dir === 'next' ? 200 : -200, 0],
+        });
+
+        anime({
+          targets: [newSlide.children[1], newSlide.children[2], newSlide.children[3]],
+          duration: animation.slides.duration * 2,
+          easing: animation.slides.easing,
+          delay: (t, i) => i * 100 + 100,
+          translateX: [dir === 'next' ? 300 : -300, 0],
+          opacity: [0, 1],
+        });
+
+        this.setState({ current });
       });
+    };
 
-      current =
-        dir === 'next'
-          ? current < slidesTotal - 1 ? current + 1 : 0
-          : current > 0 ? current - 1 : slidesTotal - 1;
-
-      this.setState({ current, isAnimating: true });
-
-      const newSlide = slides.children[current];
-      newSlide.classList.add(s.current);
-
+    const animateShapeOut = () => {
       anime({
-        targets: newSlide,
-        duration: animation.slides.duration,
-        easing: animation.slides.easing,
-        translateX: [dir === 'next' ? width : -1 * width, 0],
+        targets: shape,
+        duration: animation.shape.duration,
+        delay: 150,
+        easing: animation.shape.easing.out,
+        d: initial,
+        complete: () => (this.isAnimating = false),
       });
+    };
 
-      const newSlideImg = newSlide;
-      anime.remove(newSlideImg);
-
-      anime({
-        targets: newSlideImg,
-        duration: animation.slides.duration * 4,
-        easing: animation.slides.easing,
-        translateX: [dir === 'next' ? 200 : -200, 0],
-      });
-
-      anime({
-        targets: [newSlide.children[1], newSlide.children[2], newSlide.children[3]],
-        duration: animation.slides.duration * 2,
-        easing: animation.slides.easing,
-        delay: (t, i) => i * 100 + 100,
-        translateX: [dir === 'next' ? 300 : -300, 0],
-        opacity: [0, 1],
-      });
-    });
+    animateShapeIn.finished.then(animateSlides).then(animateShapeOut);
   }
 
   renderSlides() {

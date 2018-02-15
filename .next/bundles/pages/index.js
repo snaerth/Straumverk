@@ -769,15 +769,12 @@ var Slider = function (_Component) {
       frameFill: '#f1f1f1',
       frameSize: 0,
       paths: null,
-      isAnimating: false,
       dir: 'next'
     };
 
     _this2.nextSlide = _this2.nextSlide.bind(_this2);
     _this2.prevSlide = _this2.prevSlide.bind(_this2);
     _this2.handleKeyDown = _this2.handleKeyDown.bind(_this2);
-    _this2.animateShapeOut = _this2.animateShapeOut.bind(_this2);
-    _this2.animateSlides = _this2.animateSlides.bind(_this2);
     return _this2;
   }
 
@@ -844,7 +841,7 @@ var Slider = function (_Component) {
       paths.initial = this.calculatePath('initial');
       paths.final = this.calculatePath('final');
       svg.setAttribute('viewbox', '0 0 ' + rect.width + ' ' + rect.height);
-      shape.setAttribute('d', isAnimating ? paths.final : paths.initial);
+      shape.setAttribute('d', this.isAnimating ? paths.final : paths.initial);
     }
   }, {
     key: 'calculatePath',
@@ -884,128 +881,98 @@ var Slider = function (_Component) {
 
       var dir = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'next';
       var _state4 = this.state,
-          isAnimating = _state4.isAnimating,
           shape = _state4.shape,
           animation = _state4.animation,
           paths = _state4.paths;
 
 
-      if (isAnimating) {
-        return false;
-      }
+      if (this.isAnimating) return false;
+      this.isAnimating = true;
 
-      this.setState({ isAnimating: true, dir: dir }, function () {
-        var animateShapeIn = __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
-          targets: shape,
-          duration: animation.shape.duration,
-          easing: animation.shape.easing.in,
-          d: paths.final
-        });
-
-        animateShapeIn.finished.then(_this4.animateSlides).then(_this4.animateShapeOut);
-      });
-    }
-  }, {
-    key: 'animateShapeOut',
-    value: function animateShapeOut() {
-      var _this5 = this;
-
-      var _state5 = this.state,
-          shape = _state5.shape,
-          paths = _state5.paths,
-          animation = _state5.animation,
-          isAnimating = _state5.isAnimating;
-
-
-      __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+      var animateShapeIn = __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
         targets: shape,
         duration: animation.shape.duration,
-        delay: 150,
-        easing: animation.shape.easing.out,
-        d: paths.initial,
-        complete: function complete() {
-          _this5.setState({
-            isAnimating: false
-          });
-        }
+        easing: animation.shape.easing.in,
+        d: paths.final
       });
-    }
 
-    /**
-     * Animages slides
-     */
+      var animateSlides = function animateSlides() {
+        return new Promise(function (resolve, reject) {
+          var _state5 = _this4.state,
+              shape = _state5.shape,
+              isAnimating = _state5.isAnimating,
+              paths = _state5.paths,
+              slides = _state5.slides,
+              slideshow = _state5.slideshow,
+              animation = _state5.animation,
+              dir = _state5.dir,
+              width = _state5.rect.width;
+          var current = _this4.state.current;
 
-  }, {
-    key: 'animateSlides',
-    value: function animateSlides() {
-      var _this6 = this;
+          var currentSlide = slides.children[current];
+          var slidesTotal = slides.children.length;
 
-      console.log('Jojo nothing happening');
-      return new Promise(function (resolve, reject) {
-        var _state6 = _this6.state,
-            shape = _state6.shape,
-            isAnimating = _state6.isAnimating,
-            paths = _state6.paths,
-            slides = _state6.slides,
-            slideshow = _state6.slideshow,
-            animation = _state6.animation,
-            dir = _state6.dir,
-            width = _state6.rect.width;
+          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+            targets: currentSlide,
+            duration: animation.slides.duration,
+            easing: animation.slides.easing,
+            translateX: dir === 'next' ? -1 * width : width,
+            complete: function complete() {
+              currentSlide.classList.remove(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.current);
+            }
+          });
 
-        console.log(_this6.state);
-        var current = _this6.state.current;
+          current = dir === 'next' ? current < slidesTotal - 1 ? current + 1 : 0 : current > 0 ? current - 1 : slidesTotal - 1;
 
+          var newSlide = slides.children[current];
+          newSlide.classList.add(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.current);
 
-        if (isAnimating) return false;
+          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+            targets: newSlide,
+            duration: animation.slides.duration,
+            easing: animation.slides.easing,
+            translateX: [dir === 'next' ? width : -1 * width, 0]
+          });
 
-        var currentSlide = slides.children[current];
-        var slidesTotal = slides.children.length;
+          var newSlideImg = newSlide;
+          __WEBPACK_IMPORTED_MODULE_3_animejs___default.a.remove(newSlideImg);
 
+          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+            targets: newSlideImg,
+            duration: animation.slides.duration * 4,
+            easing: animation.slides.easing,
+            translateX: [dir === 'next' ? 200 : -200, 0]
+          });
+
+          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+            targets: [newSlide.children[1], newSlide.children[2], newSlide.children[3]],
+            duration: animation.slides.duration * 2,
+            easing: animation.slides.easing,
+            delay: function delay(t, i) {
+              return i * 100 + 100;
+            },
+            translateX: [dir === 'next' ? 300 : -300, 0],
+            opacity: [0, 1]
+          });
+
+          _this4.setState({ current: current });
+        });
+      };
+
+      var animateShapeOut = function animateShapeOut() {
         __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
-          targets: currentSlide,
-          duration: animation.slides.duration,
-          easing: animation.slides.easing,
-          translateX: dir === 'next' ? -1 * width : width,
+          targets: shape,
+          duration: animation.shape.duration,
+          delay: 150,
+          easing: animation.shape.easing.out,
+          d: initial,
           complete: function complete() {
-            currentSlide.classList.remove(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.current);
+            return _this4.isAnimating = false;
           }
         });
+      };
 
-        current = dir === 'next' ? current < slidesTotal - 1 ? current + 1 : 0 : current > 0 ? current - 1 : slidesTotal - 1;
-
-        _this6.setState({ current: current, isAnimating: true });
-
-        var newSlide = slides.children[current];
-        newSlide.classList.add(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.current);
-
-        __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
-          targets: newSlide,
-          duration: animation.slides.duration,
-          easing: animation.slides.easing,
-          translateX: [dir === 'next' ? width : -1 * width, 0]
-        });
-
-        var newSlideImg = newSlide;
-        __WEBPACK_IMPORTED_MODULE_3_animejs___default.a.remove(newSlideImg);
-
-        __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
-          targets: newSlideImg,
-          duration: animation.slides.duration * 4,
-          easing: animation.slides.easing,
-          translateX: [dir === 'next' ? 200 : -200, 0]
-        });
-
-        __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
-          targets: [newSlide.children[1], newSlide.children[2], newSlide.children[3]],
-          duration: animation.slides.duration * 2,
-          easing: animation.slides.easing,
-          delay: function delay(t, i) {
-            return i * 100 + 100;
-          },
-          translateX: [dir === 'next' ? 300 : -300, 0],
-          opacity: [0, 1]
-        });
-      });
+      animateShapeIn.finished.then(animateSlides).then(animateShapeOut);
     }
   }, {
     key: 'renderSlides',
@@ -1024,19 +991,19 @@ var Slider = function (_Component) {
           'div',
           { key: i, className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.slide, current === i ? __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.current : ''), __source: {
               fileName: _jsxFileName,
-              lineNumber: 280
+              lineNumber: 260
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.img, style: { backgroundImage: 'url(' + image + ')' }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 281
+              lineNumber: 261
             }
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h2',
             { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.title, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 282
+                lineNumber: 262
               }
             },
             title
@@ -1045,7 +1012,7 @@ var Slider = function (_Component) {
             'p',
             { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.desc, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 283
+                lineNumber: 263
               }
             },
             desc
@@ -1054,7 +1021,7 @@ var Slider = function (_Component) {
             'a',
             { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.link, href: '#', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 284
+                lineNumber: 264
               }
             },
             link
@@ -1065,24 +1032,24 @@ var Slider = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this7 = this;
+      var _this5 = this;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.slideshow, ref: function ref(r) {
-            return _this7.slideshow = r;
+            return _this5.slideshow = r;
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 294
+            lineNumber: 274
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.slides, ref: function ref(r) {
-              return _this7.slides = r;
+              return _this5.slides = r;
             }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 295
+              lineNumber: 275
             }
           },
           this.renderSlides()
@@ -1090,19 +1057,19 @@ var Slider = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'nav',
           { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.slidenav, ref: function ref(r) {
-              return _this7.slidenav = r;
+              return _this5.slidenav = r;
             }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 298
+              lineNumber: 278
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'button',
             { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.item, __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.prev), onClick: function onClick() {
-                return _this7.prevSlide();
+                return _this5.prevSlide();
               }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 299
+                lineNumber: 279
               }
             },
             'Previous'
@@ -1112,7 +1079,7 @@ var Slider = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 302
+                lineNumber: 282
               }
             },
             '/'
@@ -1120,10 +1087,10 @@ var Slider = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'button',
             { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.item, __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.next), onClick: function onClick() {
-                return _this7.nextSlide();
+                return _this5.nextSlide();
               }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 303
+                lineNumber: 283
               }
             },
             'Next'
