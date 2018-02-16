@@ -7,6 +7,7 @@ import { SET_LANG } from '../common/types';
 import configureStore from '../common/store';
 import Navigation from '../components/navigation';
 import Slider from '../components/slider';
+import Section from '../components/section';
 import 'isomorphic-unfetch';
 
 class Index extends Component {
@@ -24,6 +25,29 @@ class Index extends Component {
   }
 
   render() {
+    const { t, lang } = this.props;
+
+    const slides = [
+      {
+        image: '/static/img/25.jpg',
+        title: t.specialField,
+        desc: t.specialFieldDesc,
+        link: t.specialFieldLink,
+      },
+      {
+        image: '/static/img/28.jpg',
+        title: t.projects,
+        desc: t.projectsDesc,
+        link: t.projectsLink,
+      },
+      {
+        image: '/static/img/27.jpg',
+        title: t.partners,
+        desc: t.partnersDesc,
+        link: t.partnersLink,
+      },
+    ];
+
     return (
       <div>
         <Head>
@@ -33,8 +57,11 @@ class Index extends Component {
           <link rel="stylesheet" href="/static/css/base.css" />
         </Head>
         <main>
-          <Navigation />
-          <Slider />
+          <Navigation t={t} lang={lang} />
+          <Slider slides={slides} t={t} />
+          <Section title={t.partners} desc={t.partnersDesc} />
+          <Section title={t.projects} desc={t.projectsDesc} />
+          <Section title={t.specialField} desc={t.specialFieldDesc} />
         </main>
       </div>
     );
@@ -49,6 +76,7 @@ class Index extends Component {
 function mapStateToProps(state) {
   const { translations, lang } = state.common;
   return {
+    t: translations,
     lang,
   };
 }

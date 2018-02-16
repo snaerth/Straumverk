@@ -1,11 +1,12 @@
 /* Color schemes */
 .slideshow {
+  --fontsize-stitle: 10vw;
   --color-text: #000;
   --color-bg: #f1f1f1;
   --color-link: #000;
   --color-link-hover: #0e54c1;
+  --color-sbackground: #f1f1f1;
   --color-stitle: #000;
-  --fontsize-stitle: 12vw;
   --color-sdesc: #000;
   --color-slink: #000;
   --color-slink-hover: #000;
@@ -16,6 +17,7 @@
 }
 
 .slideshow {
+  display: block;
   width: 100%;
   height: calc(100vh - 200px);
   position: relative;
@@ -23,6 +25,11 @@
 }
 
 .slides {
+  background: var(--color-sbackground);
+}
+
+.slides,
+svg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -85,7 +92,9 @@
 .title {
   position: relative;
   font-size: var(--fontsize-stitle);
+  font-weight: bold;
   margin: 0;
+  padding-bottom: 20px;
   cursor: default;
   line-height: 1;
   color: var(--color-stitle);

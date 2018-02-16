@@ -1,7 +1,15 @@
 {
   "specialField": "Special field",
+  "specialFieldDesc": "We specialize in many things. Our special filed section bla.",
+  "specialFieldLink": "Explore our specials",
   "projects": "Projects",
+  "projectsDesc": "Our projects are complex, fun and cool",
+  "projectsLink": "Explore our works",
   "aboutUs": "About us",
   "partners": "Partners",
-  "employees": "Employees"
+  "partnersDesc": "Our partners are very important for our survival",
+  "partnersLink": "Explore our partners",
+  "employees": "Employees",
+  "prev": "Previous",
+  "next": "Next"
 }

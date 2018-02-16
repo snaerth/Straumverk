@@ -1,7 +1,15 @@
 {
   "specialField": "Fagsvið",
+  "specialFieldDesc": "Við vinnum eftir ítrustu kröfum á fagsviðum",
+  "specialFieldLink": "Skoða nánar",
   "projects": "Verkefni",
+  "projectsDesc": "Verkefnin okkar eru fjölbreytt, skemmtileg og flókin.",
+  "projectsLink": "Skoða nánar",
   "aboutUs": "Um okkur",
   "partners": "Samstarfsaðilar",
-  "employees": "Starfsmenn"
+  "partnersDesc": "Undirtexti fyrir samstarfsaðila því þeir eru mikilvægir",
+  "partnersLink": "Skoða nánar",
+  "employees": "Starfsmenn",
+  "prev": "Fyrri",
+  "next": "Næsta"
 }

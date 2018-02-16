@@ -484,7 +484,8 @@ var Navigation = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 Navigation.propTypes = {
-  t: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.object.isRequired
+  t: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.object.isRequired,
+  lang: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired
 };
 
 /**
@@ -493,16 +494,11 @@ Navigation.propTypes = {
  * @param {Object} state
  */
 function mapStateToProps(state) {
-  var _state$common = state.common,
-      translations = _state$common.translations,
-      avaliableLang = _state$common.avaliableLang,
-      lang = _state$common.lang;
+  var avaliableLang = state.common.avaliableLang;
 
 
   return {
-    t: translations,
-    avaliableLang: avaliableLang,
-    lang: lang
+    avaliableLang: avaliableLang
   };
 }
 
@@ -518,6 +514,98 @@ function mapDispatchToProps(dispatch) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(Navigation));
+
+/***/ }),
+
+/***/ "./components/section/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__section__ = __webpack_require__("./components/section/section.js");
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__section__["a"]; });
+
+
+/***/ }),
+
+/***/ "./components/section/section.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+var _jsxFileName = '/Users/snaerthoroddsson/Projects/new_nordic/components/section/section.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Section = function (_Component) {
+  _inherits(Section, _Component);
+
+  function Section() {
+    _classCallCheck(this, Section);
+
+    return _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).apply(this, arguments));
+  }
+
+  _createClass(Section, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          title = _props.title,
+          desc = _props.desc;
+
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'section',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 9
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 10
+            }
+          },
+          title
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 11
+            }
+          },
+          desc
+        )
+      );
+    }
+  }]);
+
+  return Section;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+Section.propTypes = {
+  title: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
+  desc: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Section);
 
 /***/ }),
 
@@ -563,6 +651,8 @@ module.exports = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_animejs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__slider_css__ = __webpack_require__("./components/slider/slider.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__slider_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__slider_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util__ = __webpack_require__("util");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_util__);
 var _jsxFileName = '/Users/snaerthoroddsson/Projects/new_nordic/components/slider/slider.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -579,22 +669,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var SLIDES = [{
-  image: '/static/img/25.jpg',
-  title: 'Colossal 1',
-  desc: 'A matter of delicate proportions and aesthetics.',
-  link: 'Explore our works'
-}, {
-  image: '/static/img/28.jpg',
-  title: 'Colossal 2',
-  desc: 'A matter of delicate proportions and aesthetics.',
-  link: 'Explore our works'
-}, {
-  image: '/static/img/27.jpg',
-  title: 'Colossal 3',
-  desc: 'A matter of delicate proportions and aesthetics.',
-  link: 'Explore our works'
-}];
 
 // From https://davidwalsh.name/javascript-debounce-function.
 function debounce(func, wait, immediate) {
@@ -658,21 +732,23 @@ var Slider = function (_Component) {
     value: function componentDidMount() {
       var _this3 = this;
 
-      var rect = this.slideshow.getBoundingClientRect();
-      this.setState({
-        rect: rect,
-        slideshow: this.slideshow,
-        slides: this.slides,
-        frameSize: rect.width / 12
-      }, function () {
-        _this3.createFrame();
-      });
+      setTimeout(function () {
+        var rect = _this3.slideshow.getBoundingClientRect();
+        _this3.setState({
+          rect: rect,
+          slideshow: _this3.slideshow,
+          slides: _this3.slides,
+          frameSize: rect.width / 14
+        }, function () {
+          _this3.createFrame();
+        });
 
-      window.addEventListener('resize', debounce(function () {
-        _this3.setState({ rect: _this3.slideshow.getBoundingClientRect() });
-        _this3.updateFrame();
-      }, 20));
-      document.addEventListener('keydown', this.handleKeyDown, true);
+        window.addEventListener('resize', debounce(function () {
+          _this3.setState({ rect: _this3.slideshow.getBoundingClientRect() });
+          _this3.updateFrame();
+        }, 20));
+        document.addEventListener('keydown', _this3.handleKeyDown, true);
+      }, 0);
     }
   }, {
     key: 'componentWillUnmount',
@@ -687,7 +763,7 @@ var Slider = function (_Component) {
           frameFill = _state.frameFill,
           slideshow = _state.slideshow;
 
-      var frameSize = rect.width / 12;
+      var frameSize = rect.width / 14;
       var paths = {
         initial: this.calculatePath('initial'),
         final: this.calculatePath('final')
@@ -757,8 +833,12 @@ var Slider = function (_Component) {
       var dir = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'next';
       var _state4 = this.state,
           shape = _state4.shape,
+          paths = _state4.paths,
+          slides = _state4.slides,
+          slideshow = _state4.slideshow,
           animation = _state4.animation,
-          paths = _state4.paths;
+          width = _state4.rect.width;
+      var current = this.state.current;
 
 
       if (this.isAnimating) return false;
@@ -773,17 +853,6 @@ var Slider = function (_Component) {
 
       var animateSlides = function animateSlides() {
         return new Promise(function (resolve, reject) {
-          var _state5 = _this4.state,
-              shape = _state5.shape,
-              isAnimating = _state5.isAnimating,
-              paths = _state5.paths,
-              slides = _state5.slides,
-              slideshow = _state5.slideshow,
-              animation = _state5.animation,
-              dir = _state5.dir,
-              width = _state5.rect.width;
-          var current = _this4.state.current;
-
           var currentSlide = slides.children[current];
           var slidesTotal = slides.children.length;
 
@@ -794,6 +863,7 @@ var Slider = function (_Component) {
             translateX: dir === 'next' ? -1 * width : width,
             complete: function complete() {
               currentSlide.classList.remove(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.current);
+              resolve();
             }
           });
 
@@ -814,7 +884,7 @@ var Slider = function (_Component) {
 
           __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
             targets: newSlideImg,
-            duration: animation.slides.duration * 4,
+            duration: animation.slides.duration,
             easing: animation.slides.easing,
             translateX: [dir === 'next' ? 200 : -200, 0]
           });
@@ -829,8 +899,6 @@ var Slider = function (_Component) {
             translateX: [dir === 'next' ? 300 : -300, 0],
             opacity: [0, 1]
           });
-
-          _this4.setState({ current: current });
         });
       };
 
@@ -840,9 +908,10 @@ var Slider = function (_Component) {
           duration: animation.shape.duration,
           delay: 150,
           easing: animation.shape.easing.out,
-          d: initial,
+          d: paths.initial,
           complete: function complete() {
-            return _this4.isAnimating = false;
+            _this4.isAnimating = false;
+            _this4.setState({ current: current });
           }
         });
       };
@@ -853,9 +922,10 @@ var Slider = function (_Component) {
     key: 'renderSlides',
     value: function renderSlides() {
       var current = this.state.current;
+      var slides = this.props.slides;
 
 
-      return SLIDES.map(function (slide, i) {
+      return slides.map(function (slide, i) {
         var image = slide.image,
             title = slide.title,
             desc = slide.desc,
@@ -866,19 +936,19 @@ var Slider = function (_Component) {
           'div',
           { key: i, className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.slide, current === i ? __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.current : ''), __source: {
               fileName: _jsxFileName,
-              lineNumber: 260
+              lineNumber: 235
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.img, style: { backgroundImage: 'url(' + image + ')' }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 261
+              lineNumber: 236
             }
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h2',
             { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.title, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 262
+                lineNumber: 237
               }
             },
             title
@@ -887,7 +957,7 @@ var Slider = function (_Component) {
             'p',
             { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.desc, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 263
+                lineNumber: 238
               }
             },
             desc
@@ -896,7 +966,7 @@ var Slider = function (_Component) {
             'a',
             { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.link, href: '#', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 264
+                lineNumber: 239
               }
             },
             link
@@ -909,13 +979,16 @@ var Slider = function (_Component) {
     value: function render() {
       var _this5 = this;
 
+      var t = this.props.t;
+
+
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: __WEBPACK_IMPORTED_MODULE_4__slider_css___default.a.slideshow, ref: function ref(r) {
             return _this5.slideshow = r;
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 274
+            lineNumber: 251
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -924,7 +997,7 @@ var Slider = function (_Component) {
               return _this5.slides = r;
             }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 275
+              lineNumber: 252
             }
           },
           this.renderSlides()
@@ -935,7 +1008,7 @@ var Slider = function (_Component) {
               return _this5.slidenav = r;
             }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 278
+              lineNumber: 255
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -944,17 +1017,17 @@ var Slider = function (_Component) {
                 return _this5.prevSlide();
               }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 279
+                lineNumber: 256
               }
             },
-            'Previous'
+            t.prev
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'span',
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 282
+                lineNumber: 259
               }
             },
             '/'
@@ -965,10 +1038,10 @@ var Slider = function (_Component) {
                 return _this5.nextSlide();
               }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 283
+                lineNumber: 260
               }
             },
-            'Next'
+            t.next
           )
         )
       );
@@ -978,7 +1051,10 @@ var Slider = function (_Component) {
   return Slider;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-Slider.propTypes = {};
+Slider.propTypes = {
+  slides: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.array.isRequired,
+  t: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object.isRequired
+};
 
 /* harmony default export */ __webpack_exports__["a"] = (Slider);
 
@@ -1004,8 +1080,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_store__ = __webpack_require__("./common/store.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_navigation__ = __webpack_require__("./components/navigation/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_slider__ = __webpack_require__("./components/slider/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_isomorphic_unfetch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_section__ = __webpack_require__("./components/section/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_isomorphic_unfetch__);
 
 var _jsxFileName = '/Users/snaerthoroddsson/Projects/new_nordic/pages/index.js';
 
@@ -1030,6 +1107,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var Index = function (_Component) {
   _inherits(Index, _Component);
 
@@ -1042,12 +1120,34 @@ var Index = function (_Component) {
   _createClass(Index, [{
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          t = _props.t,
+          lang = _props.lang;
+
+
+      var slides = [{
+        image: '/static/img/25.jpg',
+        title: t.specialField,
+        desc: t.specialFieldDesc,
+        link: t.specialFieldLink
+      }, {
+        image: '/static/img/28.jpg',
+        title: t.projects,
+        desc: t.projectsDesc,
+        link: t.projectsLink
+      }, {
+        image: '/static/img/27.jpg',
+        title: t.partners,
+        desc: t.partnersDesc,
+        link: t.partnersLink
+      }];
+
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'div',
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 52
           }
         },
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -1055,7 +1155,7 @@ var Index = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 53
             }
           },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -1063,24 +1163,24 @@ var Index = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 30
+                lineNumber: 54
               }
             },
             'New Nordic'
           ),
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('meta', { name: 'viewport', content: 'initial-scale=1.0, width=device-width', __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
+              lineNumber: 55
             }
           }),
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/css/bulma.min.css', __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 56
             }
           }),
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/css/base.css', __source: {
               fileName: _jsxFileName,
-              lineNumber: 33
+              lineNumber: 57
             }
           })
         ),
@@ -1089,19 +1189,32 @@ var Index = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 35
+              lineNumber: 59
             }
           },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_navigation__["a" /* default */], {
-            __source: {
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_navigation__["a" /* default */], { t: t, lang: lang, __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 60
             }
           }),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_slider__["a" /* default */], {
-            __source: {
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_slider__["a" /* default */], { slides: slides, t: t, __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 61
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__components_section__["a" /* default */], { title: t.partners, desc: t.partnersDesc, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 62
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__components_section__["a" /* default */], { title: t.projects, desc: t.projectsDesc, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 63
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__components_section__["a" /* default */], { title: t.specialField, desc: t.specialFieldDesc, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 64
             }
           })
         )
@@ -1170,6 +1283,7 @@ function mapStateToProps(state) {
       lang = _state$common.lang;
 
   return {
+    t: translations,
     lang: lang
   };
 }
@@ -1285,6 +1399,13 @@ module.exports = require("redux");
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
+
+/***/ }),
+
+/***/ "util":
+/***/ (function(module, exports) {
+
+module.exports = require("util");
 
 /***/ })
 

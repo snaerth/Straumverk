@@ -70,6 +70,7 @@ class Navigation extends Component {
 
 Navigation.propTypes = {
   t: PropTypes.object.isRequired,
+  lang: PropTypes.string.isRequired,
 };
 
 /**
@@ -78,12 +79,10 @@ Navigation.propTypes = {
  * @param {Object} state
  */
 function mapStateToProps(state) {
-  const { translations, avaliableLang, lang } = state.common;
+  const { avaliableLang } = state.common;
 
   return {
-    t: translations,
     avaliableLang,
-    lang,
   };
 }
 

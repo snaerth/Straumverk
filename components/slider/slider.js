@@ -3,27 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import anime from 'animejs';
 import s from './slider.css';
-
-const SLIDES = [
-  {
-    image: '/static/img/25.jpg',
-    title: 'Colossal 1',
-    desc: 'A matter of delicate proportions and aesthetics.',
-    link: 'Explore our works',
-  },
-  {
-    image: '/static/img/28.jpg',
-    title: 'Colossal 2',
-    desc: 'A matter of delicate proportions and aesthetics.',
-    link: 'Explore our works',
-  },
-  {
-    image: '/static/img/27.jpg',
-    title: 'Colossal 3',
-    desc: 'A matter of delicate proportions and aesthetics.',
-    link: 'Explore our works',
-  },
-];
+import { log } from 'util';
 
 // From https://davidwalsh.name/javascript-debounce-function.
 function debounce(func, wait, immediate) {
@@ -75,27 +55,29 @@ class Slider extends Component {
   }
 
   componentDidMount() {
-    const rect = this.slideshow.getBoundingClientRect();
-    this.setState(
-      {
-        rect,
-        slideshow: this.slideshow,
-        slides: this.slides,
-        frameSize: rect.width / 12,
-      },
-      () => {
-        this.createFrame();
-      }
-    );
+    setTimeout(() => {
+      const rect = this.slideshow.getBoundingClientRect();
+      this.setState(
+        {
+          rect,
+          slideshow: this.slideshow,
+          slides: this.slides,
+          frameSize: rect.width / 14,
+        },
+        () => {
+          this.createFrame();
+        }
+      );
 
-    window.addEventListener(
-      'resize',
-      debounce(() => {
-        this.setState({ rect: this.slideshow.getBoundingClientRect() });
-        this.updateFrame();
-      }, 20)
-    );
-    document.addEventListener('keydown', this.handleKeyDown, true);
+      window.addEventListener(
+        'resize',
+        debounce(() => {
+          this.setState({ rect: this.slideshow.getBoundingClientRect() });
+          this.updateFrame();
+        }, 20)
+      );
+      document.addEventListener('keydown', this.handleKeyDown, true);
+    }, 0);
   }
 
   componentWillUnmount() {
@@ -104,7 +86,7 @@ class Slider extends Component {
 
   createFrame() {
     const { rect, frameFill, slideshow } = this.state;
-    const frameSize = rect.width / 12;
+    const frameSize = rect.width / 14;
     const paths = {
       initial: this.calculatePath('initial'),
       final: this.calculatePath('final'),
@@ -160,7 +142,8 @@ class Slider extends Component {
   }
 
   navigate(dir = 'next') {
-    const { shape, animation, paths } = this.state;
+    const { shape, paths, slides, slideshow, animation, rect: { width } } = this.state;
+    let { current } = this.state;
 
     if (this.isAnimating) return false;
     this.isAnimating = true;
@@ -174,17 +157,6 @@ class Slider extends Component {
 
     const animateSlides = () => {
       return new Promise((resolve, reject) => {
-        const {
-          shape,
-          isAnimating,
-          paths,
-          slides,
-          slideshow,
-          animation,
-          dir,
-          rect: { width },
-        } = this.state;
-        let { current } = this.state;
         const currentSlide = slides.children[current];
         const slidesTotal = slides.children.length;
 
@@ -195,6 +167,7 @@ class Slider extends Component {
           translateX: dir === 'next' ? -1 * width : width,
           complete: () => {
             currentSlide.classList.remove(s.current);
+            resolve();
           },
         });
 
@@ -218,7 +191,7 @@ class Slider extends Component {
 
         anime({
           targets: newSlideImg,
-          duration: animation.slides.duration * 4,
+          duration: animation.slides.duration,
           easing: animation.slides.easing,
           translateX: [dir === 'next' ? 200 : -200, 0],
         });
@@ -231,8 +204,6 @@ class Slider extends Component {
           translateX: [dir === 'next' ? 300 : -300, 0],
           opacity: [0, 1],
         });
-
-        this.setState({ current });
       });
     };
 
@@ -242,8 +213,11 @@ class Slider extends Component {
         duration: animation.shape.duration,
         delay: 150,
         easing: animation.shape.easing.out,
-        d: initial,
-        complete: () => (this.isAnimating = false),
+        d: paths.initial,
+        complete: () => {
+          this.isAnimating = false;
+          this.setState({ current });
+        },
       });
     };
 
@@ -252,8 +226,9 @@ class Slider extends Component {
 
   renderSlides() {
     const { current } = this.state;
+    const { slides } = this.props;
 
-    return SLIDES.map((slide, i) => {
+    return slides.map((slide, i) => {
       const { image, title, desc, link } = slide;
 
       return (
@@ -270,6 +245,8 @@ class Slider extends Component {
   }
 
   render() {
+    const { t } = this.props;
+
     return (
       <div className={s.slideshow} ref={r => (this.slideshow = r)}>
         <div className={s.slides} ref={r => (this.slides = r)}>
@@ -277,11 +254,11 @@ class Slider extends Component {
         </div>
         <nav className={s.slidenav} ref={r => (this.slidenav = r)}>
           <button className={classnames(s.item, s.prev)} onClick={() => this.prevSlide()}>
-            Previous
+            {t.prev}
           </button>
           <span>/</span>
           <button className={classnames(s.item, s.next)} onClick={() => this.nextSlide()}>
-            Next
+            {t.next}
           </button>
         </nav>
       </div>
@@ -289,6 +266,9 @@ class Slider extends Component {
   }
 }
 
-Slider.propTypes = {};
+Slider.propTypes = {
+  slides: PropTypes.array.isRequired,
+  t: PropTypes.object.isRequired,
+};
 
 export default Slider;
