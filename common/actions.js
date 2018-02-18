@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SET_LANG } from './types';
+import { SET_LANG, TOGGLE_MENU } from './types';
 
 /**
  * Gets global language for application
@@ -37,4 +37,13 @@ export function getTranslations(lang = 'is') {
       return new Error(error);
     }
   };
+}
+
+/**
+ * Toggles navigation menu
+ *
+ * @param {Boolean} menuOpen - State of navigatin menu
+ */
+export function toggleMenu(menuOpen) {
+  return { type: TOGGLE_MENU, payload: menuOpen };
 }

@@ -1,13 +1,20 @@
 {
   "specialField": "Special field",
-  "specialFieldDesc": "We specialize in many things. Our special filed section bla.",
+  "specialFieldShortDesc":
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "specialFieldDesc":
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   "specialFieldLink": "Explore our specials",
   "projects": "Projects",
-  "projectsDesc": "Our projects are complex, fun and cool",
+  "projectsShortDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "projectsDesc":
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   "projectsLink": "Explore our works",
   "aboutUs": "About us",
   "partners": "Partners",
-  "partnersDesc": "Our partners are very important for our survival",
+  "partnersShortDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "partnersDesc":
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   "partnersLink": "Explore our partners",
   "employees": "Employees",
   "prev": "Previous",

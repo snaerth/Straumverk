@@ -95,6 +95,7 @@ class Slider extends Component {
     svg.setAttribute('class', 'shape');
     svg.setAttribute('width', '100%');
     svg.setAttribute('height', '100%');
+    svg.setAttribute('class', s.svgFrame);
     svg.setAttribute('viewbox', `0 0 ${rect.width} ${rect.height}`);
     svg.innerHTML = `<path fill="${frameFill}" d="${paths.initial}"/>`;
     slideshow.insertBefore(svg, this.slidenav);

@@ -1,16 +1,59 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import anime from 'animejs';
 import Link from 'next/link';
 import { bindActionCreators } from 'redux';
-import { getTranslations } from '../../common/actions';
+import MediaQuery from 'react-responsive';
+import { getTranslations, toggleMenu } from '../../common/actions';
 import s from './navigation.css';
 
 class Navigation extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      sections: null,
+    };
     this.changeLang = this.changeLang.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      sections: Array.from(document.querySelectorAll('[class*="section-"]')),
+    });
+  }
+
+  /**
+   * Handles scroll to section animation
+   * @param {Object} evt
+   */
+  clickHandler(evt) {
+    evt.preventDefault();
+    const { sections } = this.state;
+    const id = parseInt(evt.target.getAttribute('data-id'), 10);
+    const sectionId = `section-${id}`;
+    const section = sections.find(section => section.className.includes(sectionId));
+
+    if (section) {
+      const { top } = section.getBoundingClientRect();
+      const navHeight = this.navbar.clientHeight;
+      const scroll = {
+        y: window.pageYOffset,
+      };
+      console.log(navHeight);
+
+      anime({
+        targets: scroll,
+        y: top + window.pageYOffset - navHeight,
+        duration: 350,
+        easing: 'easeInOutCubic',
+        update: () => window.scroll(0, scroll.y),
+      });
+    }
   }
 
   /**
@@ -19,7 +62,11 @@ class Navigation extends Component {
    * @param {String} lang - Language key
    */
   changeLang(lang) {
-    this.props.getTranslations(lang);
+    this.props.actions.getTranslations(lang);
+  }
+
+  toggleMenu() {
+    this.props.actions.toggleMenu(!this.props.menuOpen);
   }
 
   /**
@@ -40,24 +87,39 @@ class Navigation extends Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, menuOpen } = this.props;
 
     return (
       <nav className={s.navbarBackground}>
-        <div className="container">
-          <div className="navbar">
+        <div className={classnames(s.shadow, 'navbar is-fixed-top')} ref={r => (this.navbar = r)}>
+          <div className="container">
             <div className="navbar-brand">
               <Link href="/">
-                <a className="navbar-item title is-4">New Nordic</a>
+                <a className={classnames(s.navbarBrand, 'navbar-item', 'title is-4')}>New Nordic</a>
               </Link>
+              <MediaQuery query="(max-width: 1023px)">
+                <div className={s.menu} onClick={this.toggleMenu}>
+                  <img src="/static/img/menu.svg" />
+                </div>
+              </MediaQuery>
             </div>
             <div className="navbar-menu">
-              <div className="navbar-end">
-                <a className="navbar-item">{t.aboutUs}</a>
-                <a className="navbar-item">{t.specialField}</a>
-                <a className="navbar-item">{t.projects}</a>
-                <a className="navbar-item">{t.partners}</a>
-                <a className="navbar-item">{t.employees}</a>
+              <div className="navbar-end" onClick={this.clickHandler}>
+                <a className="navbar-item" data-id={1}>
+                  {t.aboutUs}
+                </a>
+                <a className="navbar-item" data-id={2}>
+                  {t.specialField}
+                </a>
+                <a className="navbar-item" data-id={3}>
+                  {t.projects}
+                </a>
+                <a className="navbar-item" data-id={4}>
+                  {t.partners}
+                </a>
+                <a className="navbar-item" data-id={5}>
+                  {t.employees}
+                </a>
                 {this.renderLang()}
               </div>
             </div>
@@ -79,10 +141,11 @@ Navigation.propTypes = {
  * @param {Object} state
  */
 function mapStateToProps(state) {
-  const { avaliableLang } = state.common;
+  const { avaliableLang, menuOpen } = state.common;
 
   return {
     avaliableLang,
+    menuOpen,
   };
 }
 
@@ -93,7 +156,7 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    getTranslations: bindActionCreators(getTranslations, dispatch),
+    actions: bindActionCreators({ getTranslations, toggleMenu }, dispatch),
   };
 }
 

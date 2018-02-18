@@ -179,4 +179,25 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+}
+
+:root {
+  --menu-background: #2a394f;
+  --menu-background-hover: #212e41;
+  --section-background-grey: #fafafa;
+  --fontsize-stitle: 10vw;
+  --color-text: #000;
+  --color-bg: #f1f1f1;
+  --color-link: #000;
+  --color-link-hover: #0e54c1;
+  --color-sbackground: #f1f1f1;
+  --color-stitle: #000;
+  --color-sdesc: #000;
+  --color-slink: #000;
+  --color-slink-hover: #000;
+  --color-slink-bg: #fff;
+  --color-slink-hover-bg: #0e54c1;
+  --color-nav: #000;
+  --color-nav-hover: #0e54ca;
 }

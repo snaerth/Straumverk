@@ -7,12 +7,13 @@ import { SET_LANG } from '../common/types';
 import configureStore from '../common/store';
 import Navigation from '../components/navigation';
 import Slider from '../components/slider';
+import Menu from '../components/menu';
 import Section from '../components/section';
 import 'isomorphic-unfetch';
 
 class Index extends Component {
   static async getInitialProps({ req, store }) {
-    const lang = req.cookies.lang || 'is';
+    const lang = req.cookies['lang'] || 'is';
     const res = await fetch(`${process.env.LOCAL_URL}/static/lang/${lang}.json`);
     const json = await res.json();
     const payload = {
@@ -25,25 +26,25 @@ class Index extends Component {
   }
 
   render() {
-    const { t, lang } = this.props;
+    const { t, lang, menuOpen } = this.props;
 
     const slides = [
       {
         image: '/static/img/25.jpg',
         title: t.specialField,
-        desc: t.specialFieldDesc,
+        desc: t.specialFieldShortDesc,
         link: t.specialFieldLink,
       },
       {
         image: '/static/img/28.jpg',
         title: t.projects,
-        desc: t.projectsDesc,
+        desc: t.projectsShortDesc,
         link: t.projectsLink,
       },
       {
         image: '/static/img/27.jpg',
         title: t.partners,
-        desc: t.partnersDesc,
+        desc: t.partnersShortDesc,
         link: t.partnersLink,
       },
     ];
@@ -58,11 +59,28 @@ class Index extends Component {
         </Head>
         <main>
           <Navigation t={t} lang={lang} />
+          <Menu open={menuOpen} t={t} />
           <Slider slides={slides} t={t} />
-          <Section title={t.partners} desc={t.partnersDesc} />
-          <Section title={t.projects} desc={t.projectsDesc} />
-          <Section title={t.specialField} desc={t.specialFieldDesc} />
+          <Section title={t.partners} desc={t.partnersDesc} img="/static/img/19.jpg" id={1} />
+          <Section
+            title={t.projects}
+            desc={t.projectsDesc}
+            img="/static/img/17.jpg"
+            id={2}
+            switch
+          />
+          <Section
+            title={t.specialField}
+            desc={t.specialFieldDesc}
+            img="/static/img/18.jpg"
+            id={3}
+          />
         </main>
+        <style jsx global>{`
+          body {
+            padding-top: 3.25rem;
+          }
+        `}</style>
       </div>
     );
   }
@@ -74,10 +92,11 @@ class Index extends Component {
  * @param {Object} state
  */
 function mapStateToProps(state) {
-  const { translations, lang } = state.common;
+  const { translations, lang, menuOpen } = state.common;
   return {
     t: translations,
     lang,
+    menuOpen,
   };
 }
 
