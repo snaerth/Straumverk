@@ -630,11 +630,10 @@ var Navigation = function (_Component) {
         var scroll = {
           y: window.pageYOffset
         };
-        console.log(navHeight);
 
         __WEBPACK_IMPORTED_MODULE_4_animejs___default()({
           targets: scroll,
-          y: top + window.pageYOffset - navHeight,
+          y: top + window.pageYOffset - navHeight - 90,
           duration: 350,
           easing: 'easeInOutCubic',
           update: function update() {
@@ -684,7 +683,7 @@ var Navigation = function (_Component) {
                 return _this2.changeLang(item);
               }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 81
+                lineNumber: 80
               }
             },
             item.toUpperCase()
@@ -706,7 +705,7 @@ var Navigation = function (_Component) {
         'nav',
         { className: __WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBackground, __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 92
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -715,57 +714,49 @@ var Navigation = function (_Component) {
               return _this3.navbar = r;
             }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 94
+              lineNumber: 93
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'container', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 95
+                lineNumber: 94
               }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'navbar-brand', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 96
+                  lineNumber: 95
                 }
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_5_next_link___default.a,
-                { href: '/', __source: {
+                'a',
+                { className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()(__WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBrand, 'navbar-item', 'title is-4'), __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 97
+                    lineNumber: 96
                   }
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'a',
-                  { className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()(__WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBrand, 'navbar-item', 'title is-4'), __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 98
-                    }
-                  },
-                  'New Nordic'
-                )
+                'New Nordic'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_7_react_responsive___default.a,
                 { query: '(max-width: 1023px)', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 100
+                    lineNumber: 97
                   }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: __WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.menu, onClick: this.toggleMenu, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 101
+                      lineNumber: 98
                     }
                   },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/static/img/menu.svg', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 102
+                      lineNumber: 99
                     }
                   })
                 )
@@ -775,28 +766,37 @@ var Navigation = function (_Component) {
               'div',
               { className: 'navbar-menu', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 106
+                  lineNumber: 103
                 }
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'navbar-end', onClick: this.clickHandler, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 107
+                    lineNumber: 104
                   }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
                   { className: 'navbar-item', 'data-id': 1, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 108
+                      lineNumber: 105
                     }
                   },
-                  t.aboutUs
+                  t.partners
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
                   { className: 'navbar-item', 'data-id': 2, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 108
+                    }
+                  },
+                  t.projects
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'a',
+                  { className: 'navbar-item', 'data-id': 3, __source: {
                       fileName: _jsxFileName,
                       lineNumber: 111
                     }
@@ -805,27 +805,18 @@ var Navigation = function (_Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
-                  { className: 'navbar-item', 'data-id': 3, __source: {
+                  { className: 'navbar-item', 'data-id': 4, __source: {
                       fileName: _jsxFileName,
                       lineNumber: 114
                     }
                   },
-                  t.projects
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'a',
-                  { className: 'navbar-item', 'data-id': 4, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 117
-                    }
-                  },
-                  t.partners
+                  t.aboutUs
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
                   { className: 'navbar-item', 'data-id': 5, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 120
+                      lineNumber: 117
                     }
                   },
                   t.employees
@@ -897,8 +888,7 @@ module.exports = {
 	"odd": "C1T1uxQcE9pt19x-ss3r-",
 	"title": "_2OCZ2PVL2gB9nTB-O8ELB_",
 	"desc": "_2LBxAB7rSsdUgyQdC4KiLh",
-	"visible": "_3eaNyK4EiD_wM_w8qswyfy",
-	"notVisible": "WkUO2pUjhEIg4JTQSNn3A"
+	"contentContainer": "DX1yhGKowsH2fgmHY_uZi"
 };
 
 /***/ }),
@@ -917,8 +907,12 @@ module.exports = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_waypoint___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_waypoint__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_shortid__ = __webpack_require__("shortid");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_shortid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_shortid__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__section_css__ = __webpack_require__("./components/section/section.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__section_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__section_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_animejs__ = __webpack_require__("animejs");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_animejs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_responsive__ = __webpack_require__("react-responsive");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_responsive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_responsive__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__section_css__ = __webpack_require__("./components/section/section.css");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__section_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__section_css__);
 var _jsxFileName = '/Users/snaerthoroddsson/Projects/new_nordic/components/section/section.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -936,6 +930,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
 var Section = function (_Component) {
   _inherits(Section, _Component);
 
@@ -944,18 +940,51 @@ var Section = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
 
-    _this.state = {
-      visible: false
-    };
-
     _this.onEnter = _this.onEnter.bind(_this);
+    _this.tl = null;
+    _this.hasAnimated = false;
     return _this;
   }
 
   _createClass(Section, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.tl = __WEBPACK_IMPORTED_MODULE_5_animejs___default.a.timeline();
+    }
+  }, {
     key: 'onEnter',
-    value: function onEnter() {
-      console.log(this.content);
+    value: function onEnter(_ref) {
+      var currentPosition = _ref.currentPosition,
+          previousPosition = _ref.previousPosition;
+
+      if (this.hasAnimated === false) {
+        this.tl.add({
+          targets: this.imgContainer,
+          duration: 0,
+          translateX: this.props.switch ? -100 : 100
+        }).add({
+          targets: [this.content.children[0], this.content.children[1]],
+          duration: 2000,
+          easing: 'easeOutQuint',
+          delay: function delay(t, i) {
+            return i * 100 + 200;
+          },
+          translateY: -50,
+          opacity: [0, 1]
+        }).add({
+          targets: this.imgContainer,
+          offset: '-=1200', // Starts 1000ms before the previous animation ends
+          duration: 1200,
+          easing: 'easeOutQuint',
+          delay: function delay(t, i) {
+            return i * 100 + 100;
+          },
+          translateX: 0,
+          opacity: [0, 1]
+        });
+
+        this.hasAnimated = true;
+      }
     }
 
     /**
@@ -974,41 +1003,35 @@ var Section = function (_Component) {
           desc = _props.desc,
           img = _props.img,
           id = _props.id;
-      var visible = this.state.visible;
 
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'section-' + id, key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(), ref: function ref(r) {
+        {
+          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('section-' + id, __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.contentContainer),
+          key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(),
+          ref: function ref(r) {
             return _this2.content = r;
-          }, __source: {
+          },
+          __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 61
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          {
-            __source: {
+          'h2',
+          { className: __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.title, __source: {
               fileName: _jsxFileName,
-              lineNumber: 34
+              lineNumber: 66
             }
           },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            { className: __WEBPACK_IMPORTED_MODULE_5__section_css___default.a.title, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 35
-              }
-            },
-            title
-          )
+          title
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: __WEBPACK_IMPORTED_MODULE_5__section_css___default.a.desc, __source: {
+          'p',
+          { className: __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.desc, __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 67
             }
           },
           desc
@@ -1018,6 +1041,8 @@ var Section = function (_Component) {
   }, {
     key: 'renderImage',
     value: function renderImage() {
+      var _this3 = this;
+
       var _props2 = this.props,
           img = _props2.img,
           title = _props2.title,
@@ -1026,14 +1051,20 @@ var Section = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(), __source: {
+        {
+          key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(),
+          ref: function ref(r) {
+            return _this3.imgContainer = r;
+          },
+          className: this.props.switch ? __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.imgContainerLeft : __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.imgContainer,
+          __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 76
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: img, alt: title, __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 81
           }
         })
       );
@@ -1043,26 +1074,43 @@ var Section = function (_Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
-        { className: this.props.switch ? __WEBPACK_IMPORTED_MODULE_5__section_css___default.a.odd : '', __source: {
+        { className: this.props.switch ? __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.odd : '', __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 88
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_3_react_waypoint___default.a,
-          { onEnter: this.onEnter, partialVisibility: true, __source: {
+          { onEnter: this.onEnter, bottomOffset: '100px', __source: {
               fileName: _jsxFileName,
-              lineNumber: 55
+              lineNumber: 89
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_5__section_css___default.a.container, 'container'), __source: {
+            { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_7__section_css___default.a.container, 'container'), __source: {
                 fileName: _jsxFileName,
-                lineNumber: 56
+                lineNumber: 90
               }
             },
-            this.props.switch ? [this.renderImage(), this.renderText()] : [this.renderText(), this.renderImage()]
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_6_react_responsive___default.a,
+              { query: '(max-width: 1023px)', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 91
+                }
+              },
+              [this.renderText(), this.renderImage()]
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_6_react_responsive___default.a,
+              { query: '(min-width: 1024px)', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 94
+                }
+              },
+              this.props.switch ? [this.renderImage(), this.renderText()] : [this.renderText(), this.renderImage()]
+            )
           )
         )
       );

@@ -47,11 +47,32 @@
   text-align: left;
 }
 
-.visible {
-  opacity: 1;
+.contentContainer {
+  transform: translateY(50px);
 }
 
-.notVisible {
-  opacity: 0;
-  visibility: hidden;
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .container > div {
+    padding: 50px 16px;
+    flex: 1 0 100% !important;
+  }
+
+  .container > div:nth-child(2) {
+    margin-left: 0;
+    padding: 0 16px 50px 16px;
+    max-width: none;
+  }
+
+  .title {
+    font-size: 60px;
+  }
+
+  .desc {
+    font-size: 20px;
+  }
 }

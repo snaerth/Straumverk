@@ -757,11 +757,10 @@ var Navigation = function (_Component) {
         var scroll = {
           y: window.pageYOffset
         };
-        console.log(navHeight);
 
         __WEBPACK_IMPORTED_MODULE_4_animejs___default()({
           targets: scroll,
-          y: top + window.pageYOffset - navHeight,
+          y: top + window.pageYOffset - navHeight - 90,
           duration: 350,
           easing: 'easeInOutCubic',
           update: function update() {
@@ -811,7 +810,7 @@ var Navigation = function (_Component) {
                 return _this2.changeLang(item);
               }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 81
+                lineNumber: 80
               }
             },
             item.toUpperCase()
@@ -833,7 +832,7 @@ var Navigation = function (_Component) {
         'nav',
         { className: __WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBackground, __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 92
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -842,57 +841,49 @@ var Navigation = function (_Component) {
               return _this3.navbar = r;
             }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 94
+              lineNumber: 93
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'container', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 95
+                lineNumber: 94
               }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'navbar-brand', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 96
+                  lineNumber: 95
                 }
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_5_next_link___default.a,
-                { href: '/', __source: {
+                'a',
+                { className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()(__WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBrand, 'navbar-item', 'title is-4'), __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 97
+                    lineNumber: 96
                   }
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'a',
-                  { className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()(__WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBrand, 'navbar-item', 'title is-4'), __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 98
-                    }
-                  },
-                  'New Nordic'
-                )
+                'New Nordic'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_7_react_responsive___default.a,
                 { query: '(max-width: 1023px)', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 100
+                    lineNumber: 97
                   }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: __WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.menu, onClick: this.toggleMenu, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 101
+                      lineNumber: 98
                     }
                   },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/static/img/menu.svg', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 102
+                      lineNumber: 99
                     }
                   })
                 )
@@ -902,28 +893,37 @@ var Navigation = function (_Component) {
               'div',
               { className: 'navbar-menu', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 106
+                  lineNumber: 103
                 }
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'navbar-end', onClick: this.clickHandler, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 107
+                    lineNumber: 104
                   }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
                   { className: 'navbar-item', 'data-id': 1, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 108
+                      lineNumber: 105
                     }
                   },
-                  t.aboutUs
+                  t.partners
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
                   { className: 'navbar-item', 'data-id': 2, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 108
+                    }
+                  },
+                  t.projects
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'a',
+                  { className: 'navbar-item', 'data-id': 3, __source: {
                       fileName: _jsxFileName,
                       lineNumber: 111
                     }
@@ -932,27 +932,18 @@ var Navigation = function (_Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
-                  { className: 'navbar-item', 'data-id': 3, __source: {
+                  { className: 'navbar-item', 'data-id': 4, __source: {
                       fileName: _jsxFileName,
                       lineNumber: 114
                     }
                   },
-                  t.projects
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'a',
-                  { className: 'navbar-item', 'data-id': 4, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 117
-                    }
-                  },
-                  t.partners
+                  t.aboutUs
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'a',
                   { className: 'navbar-item', 'data-id': 5, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 120
+                      lineNumber: 117
                     }
                   },
                   t.employees
@@ -1088,8 +1079,12 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_waypoint__ = __webpack_require__("./node_modules/react-waypoint/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_shortid__ = __webpack_require__("./node_modules/shortid/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_shortid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_shortid__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__section_css__ = __webpack_require__("./components/section/section.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__section_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__section_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_animejs__ = __webpack_require__("./node_modules/animejs/anime.min.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_animejs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_responsive__ = __webpack_require__("./node_modules/react-responsive/dist/react-responsive.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_responsive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_responsive__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__section_css__ = __webpack_require__("./components/section/section.css");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__section_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__section_css__);
 var _jsxFileName = '/Users/snaerthoroddsson/Projects/new_nordic/components/section/section.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1113,6 +1108,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
 var Section = function (_Component) {
   _inherits(Section, _Component);
 
@@ -1121,18 +1118,51 @@ var Section = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
 
-    _this.state = {
-      visible: false
-    };
-
     _this.onEnter = _this.onEnter.bind(_this);
+    _this.tl = null;
+    _this.hasAnimated = false;
     return _this;
   }
 
   _createClass(Section, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.tl = __WEBPACK_IMPORTED_MODULE_5_animejs___default.a.timeline();
+    }
+  }, {
     key: 'onEnter',
-    value: function onEnter() {
-      console.log(this.content);
+    value: function onEnter(_ref) {
+      var currentPosition = _ref.currentPosition,
+          previousPosition = _ref.previousPosition;
+
+      if (this.hasAnimated === false) {
+        this.tl.add({
+          targets: this.imgContainer,
+          duration: 0,
+          translateX: this.props.switch ? -100 : 100
+        }).add({
+          targets: [this.content.children[0], this.content.children[1]],
+          duration: 2000,
+          easing: 'easeOutQuint',
+          delay: function delay(t, i) {
+            return i * 100 + 200;
+          },
+          translateY: -50,
+          opacity: [0, 1]
+        }).add({
+          targets: this.imgContainer,
+          offset: '-=1200', // Starts 1000ms before the previous animation ends
+          duration: 1200,
+          easing: 'easeOutQuint',
+          delay: function delay(t, i) {
+            return i * 100 + 100;
+          },
+          translateX: 0,
+          opacity: [0, 1]
+        });
+
+        this.hasAnimated = true;
+      }
     }
 
     /**
@@ -1151,41 +1181,35 @@ var Section = function (_Component) {
           desc = _props.desc,
           img = _props.img,
           id = _props.id;
-      var visible = this.state.visible;
 
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'section-' + id, key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(), ref: function ref(r) {
+        {
+          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('section-' + id, __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.contentContainer),
+          key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(),
+          ref: function ref(r) {
             return _this2.content = r;
-          }, __source: {
+          },
+          __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 61
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          {
-            __source: {
+          'h2',
+          { className: __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.title, __source: {
               fileName: _jsxFileName,
-              lineNumber: 34
+              lineNumber: 66
             }
           },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            { className: __WEBPACK_IMPORTED_MODULE_5__section_css___default.a.title, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 35
-              }
-            },
-            title
-          )
+          title
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: __WEBPACK_IMPORTED_MODULE_5__section_css___default.a.desc, __source: {
+          'p',
+          { className: __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.desc, __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 67
             }
           },
           desc
@@ -1195,6 +1219,8 @@ var Section = function (_Component) {
   }, {
     key: 'renderImage',
     value: function renderImage() {
+      var _this3 = this;
+
       var _props2 = this.props,
           img = _props2.img,
           title = _props2.title,
@@ -1203,14 +1229,20 @@ var Section = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(), __source: {
+        {
+          key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(),
+          ref: function ref(r) {
+            return _this3.imgContainer = r;
+          },
+          className: this.props.switch ? __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.imgContainerLeft : __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.imgContainer,
+          __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 76
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: img, alt: title, __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 81
           }
         })
       );
@@ -1220,26 +1252,43 @@ var Section = function (_Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
-        { className: this.props.switch ? __WEBPACK_IMPORTED_MODULE_5__section_css___default.a.odd : '', __source: {
+        { className: this.props.switch ? __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.odd : '', __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 88
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_3_react_waypoint__["a" /* default */],
-          { onEnter: this.onEnter, partialVisibility: true, __source: {
+          { onEnter: this.onEnter, bottomOffset: '100px', __source: {
               fileName: _jsxFileName,
-              lineNumber: 55
+              lineNumber: 89
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_5__section_css___default.a.container, 'container'), __source: {
+            { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_7__section_css___default.a.container, 'container'), __source: {
                 fileName: _jsxFileName,
-                lineNumber: 56
+                lineNumber: 90
               }
             },
-            this.props.switch ? [this.renderImage(), this.renderText()] : [this.renderText(), this.renderImage()]
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_6_react_responsive___default.a,
+              { query: '(max-width: 1023px)', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 91
+                }
+              },
+              [this.renderText(), this.renderImage()]
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_6_react_responsive___default.a,
+              { query: '(min-width: 1024px)', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 94
+                }
+              },
+              this.props.switch ? [this.renderImage(), this.renderText()] : [this.renderText(), this.renderImage()]
+            )
           )
         )
       );
@@ -7248,7 +7297,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "._3gaHK69gNcc-UPrlB3V_29 {\n  position: absolute;\n  top: 52px;\n  z-index: 1;\n  flex: 100%;\n  margin-left: -100%;\n  height: calc(100vh - 52px);\n  width: 100%;\n  background: var(--menu-background);\n  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;\n  transition: margin 200ms ease;\n}\n\n._3fSFQBiayPDugr0-dBRL3F {\n  margin-left: 0;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA {\n  position: relative;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul {\n  margin: 0;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li {\n  display: block;\n  width: 100%;\n  text-align: center;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a {\n  display: inline-block;\n  padding: 1em 18px 1em 33px;\n  width: 100%;\n  color: #fff;\n  white-space: pre;\n  box-sizing: border-box;\n  text-decoration: none;\n  font-size: 30px;\n  transition: background 0.15s ease-in-out;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a.rB7o2U1kUzFmsV0dtICiv,\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a:hover {\n  background: var(--menu-background-hover);\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a svg {\n  position: relative;\n  top: 5px;\n  margin-right: 10px;\n  height: 20px;\n  width: 20px;\n  fill: #fff;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA.rB7o2U1kUzFmsV0dtICiv ul {\n  display: block;\n}\n\n@media screen and (min-width: 1024px) {\n  ._3gaHK69gNcc-UPrlB3V_29 {\n    display: none;\n  }\n}\n", "", {"version":3,"sources":["/Users/snaerthoroddsson/Projects/new_nordic/components/menu/menu.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,UAAU;EACV,WAAW;EACX,WAAW;EACX,mBAAmB;EACnB,2BAA2B;EAC3B,YAAY;EACZ,mCAAmC;EACnC,yEAAyE;EACzE,8BAA8B;CAC/B;;AAED;EACE,eAAe;CAChB;;AAED;EACE,mBAAmB;CACpB;;AAED;EACE,UAAU;CACX;;AAED;EACE,eAAe;EACf,YAAY;EACZ,mBAAmB;CACpB;;AAED;EACE,sBAAsB;EACtB,2BAA2B;EAC3B,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,uBAAuB;EACvB,sBAAsB;EACtB,gBAAgB;EAChB,yCAAyC;CAC1C;;AAED;;EAEE,yCAAyC;CAC1C;;AAED;EACE,mBAAmB;EACnB,SAAS;EACT,mBAAmB;EACnB,aAAa;EACb,YAAY;EACZ,WAAW;CACZ;;AAED;EACE,eAAe;CAChB;;AAED;EACE;IACE,cAAc;GACf;CACF","file":"menu.css","sourcesContent":[".container {\n  position: absolute;\n  top: 52px;\n  z-index: 1;\n  flex: 100%;\n  margin-left: -100%;\n  height: calc(100vh - 52px);\n  width: 100%;\n  background: var(--menu-background);\n  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;\n  transition: margin 200ms ease;\n}\n\n.open {\n  margin-left: 0;\n}\n\n.dropdown {\n  position: relative;\n}\n\n.dropdown ul {\n  margin: 0;\n}\n\n.dropdown ul li {\n  display: block;\n  width: 100%;\n  text-align: center;\n}\n\n.dropdown ul li a {\n  display: inline-block;\n  padding: 1em 18px 1em 33px;\n  width: 100%;\n  color: #fff;\n  white-space: pre;\n  box-sizing: border-box;\n  text-decoration: none;\n  font-size: 30px;\n  transition: background 0.15s ease-in-out;\n}\n\n.dropdown ul li a.active,\n.dropdown ul li a:hover {\n  background: var(--menu-background-hover);\n}\n\n.dropdown ul li a svg {\n  position: relative;\n  top: 5px;\n  margin-right: 10px;\n  height: 20px;\n  width: 20px;\n  fill: #fff;\n}\n\n.dropdown.active ul {\n  display: block;\n}\n\n@media screen and (min-width: 1024px) {\n  .container {\n    display: none;\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "._3gaHK69gNcc-UPrlB3V_29 {\n  position: fixed;\n  top: 52px;\n  z-index: 1;\n  flex: 100%;\n  margin-left: -100%;\n  height: 100%;\n  width: 100%;\n  background: var(--menu-background);\n  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;\n  transition: margin 200ms ease;\n}\n\n._3fSFQBiayPDugr0-dBRL3F {\n  margin-left: 0;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA {\n  position: relative;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul {\n  margin: 0;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li {\n  display: block;\n  width: 100%;\n  text-align: center;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a {\n  display: inline-block;\n  padding: 1em 18px 1em 33px;\n  width: 100%;\n  color: #fff;\n  white-space: pre;\n  box-sizing: border-box;\n  text-decoration: none;\n  font-size: 30px;\n  transition: background 0.15s ease-in-out;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a.rB7o2U1kUzFmsV0dtICiv,\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a:hover {\n  background: var(--menu-background-hover);\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA ul li a svg {\n  position: relative;\n  top: 5px;\n  margin-right: 10px;\n  height: 20px;\n  width: 20px;\n  fill: #fff;\n}\n\n._1zNxHTZcC_Ed7qGzl4h4BA.rB7o2U1kUzFmsV0dtICiv ul {\n  display: block;\n}\n\n@media screen and (min-width: 1024px) {\n  ._3gaHK69gNcc-UPrlB3V_29 {\n    display: none;\n  }\n}\n", "", {"version":3,"sources":["/Users/snaerthoroddsson/Projects/new_nordic/components/menu/menu.css"],"names":[],"mappings":"AAAA;EACE,gBAAgB;EAChB,UAAU;EACV,WAAW;EACX,WAAW;EACX,mBAAmB;EACnB,aAAa;EACb,YAAY;EACZ,mCAAmC;EACnC,yEAAyE;EACzE,8BAA8B;CAC/B;;AAED;EACE,eAAe;CAChB;;AAED;EACE,mBAAmB;CACpB;;AAED;EACE,UAAU;CACX;;AAED;EACE,eAAe;EACf,YAAY;EACZ,mBAAmB;CACpB;;AAED;EACE,sBAAsB;EACtB,2BAA2B;EAC3B,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,uBAAuB;EACvB,sBAAsB;EACtB,gBAAgB;EAChB,yCAAyC;CAC1C;;AAED;;EAEE,yCAAyC;CAC1C;;AAED;EACE,mBAAmB;EACnB,SAAS;EACT,mBAAmB;EACnB,aAAa;EACb,YAAY;EACZ,WAAW;CACZ;;AAED;EACE,eAAe;CAChB;;AAED;EACE;IACE,cAAc;GACf;CACF","file":"menu.css","sourcesContent":[".container {\n  position: fixed;\n  top: 52px;\n  z-index: 1;\n  flex: 100%;\n  margin-left: -100%;\n  height: 100%;\n  width: 100%;\n  background: var(--menu-background);\n  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;\n  transition: margin 200ms ease;\n}\n\n.open {\n  margin-left: 0;\n}\n\n.dropdown {\n  position: relative;\n}\n\n.dropdown ul {\n  margin: 0;\n}\n\n.dropdown ul li {\n  display: block;\n  width: 100%;\n  text-align: center;\n}\n\n.dropdown ul li a {\n  display: inline-block;\n  padding: 1em 18px 1em 33px;\n  width: 100%;\n  color: #fff;\n  white-space: pre;\n  box-sizing: border-box;\n  text-decoration: none;\n  font-size: 30px;\n  transition: background 0.15s ease-in-out;\n}\n\n.dropdown ul li a.active,\n.dropdown ul li a:hover {\n  background: var(--menu-background-hover);\n}\n\n.dropdown ul li a svg {\n  position: relative;\n  top: 5px;\n  margin-right: 10px;\n  height: 20px;\n  width: 20px;\n  fill: #fff;\n}\n\n.dropdown.active ul {\n  display: block;\n}\n\n@media screen and (min-width: 1024px) {\n  .container {\n    display: none;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
@@ -7288,7 +7337,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "._1Z5oshflTfpw5zMbBL0Dfr {\n  min-height: 300px;\n  display: flex;\n  align-items: center;\n}\n\n.C1T1uxQcE9pt19x-ss3r- {\n  background: var(--section-background-grey);\n}\n\n._1Z5oshflTfpw5zMbBL0Dfr > div {\n  padding: 150px 0;\n}\n\n._1Z5oshflTfpw5zMbBL0Dfr > div:first-child {\n  flex: 1;\n}\n\n._1Z5oshflTfpw5zMbBL0Dfr > div:nth-child(2) {\n  flex: 1.5;\n  margin-left: 3em;\n  max-width: 600px;\n}\n\n.C1T1uxQcE9pt19x-ss3r- ._1Z5oshflTfpw5zMbBL0Dfr > div:first-child {\n  flex: 1.5;\n  margin-right: 3em;\n  max-width: 600px;\n}\n\n.C1T1uxQcE9pt19x-ss3r- ._1Z5oshflTfpw5zMbBL0Dfr > div:nth-child(2) {\n  flex: 1;\n}\n\n._2OCZ2PVL2gB9nTB-O8ELB_ {\n  font-size: 80px;\n  line-height: 1.05;\n  font-weight: 600;\n  letter-spacing: -0.015em;\n  text-align: left;\n}\n\n._2LBxAB7rSsdUgyQdC4KiLh {\n  padding: 1.6em 0;\n  max-width: 735px;\n  font-size: 23px;\n  text-align: left;\n}\n\n._3eaNyK4EiD_wM_w8qswyfy {\n  opacity: 1;\n}\n\n.WkUO2pUjhEIg4JTQSNn3A {\n  opacity: 0;\n  visibility: hidden;\n}\n", "", {"version":3,"sources":["/Users/snaerthoroddsson/Projects/new_nordic/components/section/section.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,cAAc;EACd,oBAAoB;CACrB;;AAED;EACE,2CAA2C;CAC5C;;AAED;EACE,iBAAiB;CAClB;;AAED;EACE,QAAQ;CACT;;AAED;EACE,UAAU;EACV,iBAAiB;EACjB,iBAAiB;CAClB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,iBAAiB;CAClB;;AAED;EACE,QAAQ;CACT;;AAED;EACE,gBAAgB;EAChB,kBAAkB;EAClB,iBAAiB;EACjB,yBAAyB;EACzB,iBAAiB;CAClB;;AAED;EACE,iBAAiB;EACjB,iBAAiB;EACjB,gBAAgB;EAChB,iBAAiB;CAClB;;AAED;EACE,WAAW;CACZ;;AAED;EACE,WAAW;EACX,mBAAmB;CACpB","file":"section.css","sourcesContent":[".container {\n  min-height: 300px;\n  display: flex;\n  align-items: center;\n}\n\n.odd {\n  background: var(--section-background-grey);\n}\n\n.container > div {\n  padding: 150px 0;\n}\n\n.container > div:first-child {\n  flex: 1;\n}\n\n.container > div:nth-child(2) {\n  flex: 1.5;\n  margin-left: 3em;\n  max-width: 600px;\n}\n\n.odd .container > div:first-child {\n  flex: 1.5;\n  margin-right: 3em;\n  max-width: 600px;\n}\n\n.odd .container > div:nth-child(2) {\n  flex: 1;\n}\n\n.title {\n  font-size: 80px;\n  line-height: 1.05;\n  font-weight: 600;\n  letter-spacing: -0.015em;\n  text-align: left;\n}\n\n.desc {\n  padding: 1.6em 0;\n  max-width: 735px;\n  font-size: 23px;\n  text-align: left;\n}\n\n.visible {\n  opacity: 1;\n}\n\n.notVisible {\n  opacity: 0;\n  visibility: hidden;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "._1Z5oshflTfpw5zMbBL0Dfr {\n  min-height: 300px;\n  display: flex;\n  align-items: center;\n}\n\n.C1T1uxQcE9pt19x-ss3r- {\n  background: var(--section-background-grey);\n}\n\n._1Z5oshflTfpw5zMbBL0Dfr > div {\n  padding: 150px 0;\n}\n\n._1Z5oshflTfpw5zMbBL0Dfr > div:first-child {\n  flex: 1;\n}\n\n._1Z5oshflTfpw5zMbBL0Dfr > div:nth-child(2) {\n  flex: 1.5;\n  margin-left: 3em;\n  max-width: 600px;\n}\n\n.C1T1uxQcE9pt19x-ss3r- ._1Z5oshflTfpw5zMbBL0Dfr > div:first-child {\n  flex: 1.5;\n  margin-right: 3em;\n  max-width: 600px;\n}\n\n.C1T1uxQcE9pt19x-ss3r- ._1Z5oshflTfpw5zMbBL0Dfr > div:nth-child(2) {\n  flex: 1;\n}\n\n._2OCZ2PVL2gB9nTB-O8ELB_ {\n  font-size: 80px;\n  line-height: 1.05;\n  font-weight: 600;\n  letter-spacing: -0.015em;\n  text-align: left;\n}\n\n._2LBxAB7rSsdUgyQdC4KiLh {\n  padding: 1.6em 0;\n  max-width: 735px;\n  font-size: 23px;\n  text-align: left;\n}\n\n.DX1yhGKowsH2fgmHY_uZi {\n  transform: translateY(50px);\n}\n\n@media screen and (max-width: 1024px) {\n  ._1Z5oshflTfpw5zMbBL0Dfr {\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n\n  ._1Z5oshflTfpw5zMbBL0Dfr > div {\n    padding: 50px 16px;\n    flex: 1 0 100% !important;\n  }\n\n  ._1Z5oshflTfpw5zMbBL0Dfr > div:nth-child(2) {\n    margin-left: 0;\n    padding: 0 16px 50px 16px;\n    max-width: none;\n  }\n\n  ._2OCZ2PVL2gB9nTB-O8ELB_ {\n    font-size: 60px;\n  }\n\n  ._2LBxAB7rSsdUgyQdC4KiLh {\n    font-size: 20px;\n  }\n}\n", "", {"version":3,"sources":["/Users/snaerthoroddsson/Projects/new_nordic/components/section/section.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,cAAc;EACd,oBAAoB;CACrB;;AAED;EACE,2CAA2C;CAC5C;;AAED;EACE,iBAAiB;CAClB;;AAED;EACE,QAAQ;CACT;;AAED;EACE,UAAU;EACV,iBAAiB;EACjB,iBAAiB;CAClB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,iBAAiB;CAClB;;AAED;EACE,QAAQ;CACT;;AAED;EACE,gBAAgB;EAChB,kBAAkB;EAClB,iBAAiB;EACjB,yBAAyB;EACzB,iBAAiB;CAClB;;AAED;EACE,iBAAiB;EACjB,iBAAiB;EACjB,gBAAgB;EAChB,iBAAiB;CAClB;;AAED;EACE,4BAA4B;CAC7B;;AAED;EACE;IACE,oBAAoB;IACpB,gBAAgB;GACjB;;EAED;IACE,mBAAmB;IACnB,0BAA0B;GAC3B;;EAED;IACE,eAAe;IACf,0BAA0B;IAC1B,gBAAgB;GACjB;;EAED;IACE,gBAAgB;GACjB;;EAED;IACE,gBAAgB;GACjB;CACF","file":"section.css","sourcesContent":[".container {\n  min-height: 300px;\n  display: flex;\n  align-items: center;\n}\n\n.odd {\n  background: var(--section-background-grey);\n}\n\n.container > div {\n  padding: 150px 0;\n}\n\n.container > div:first-child {\n  flex: 1;\n}\n\n.container > div:nth-child(2) {\n  flex: 1.5;\n  margin-left: 3em;\n  max-width: 600px;\n}\n\n.odd .container > div:first-child {\n  flex: 1.5;\n  margin-right: 3em;\n  max-width: 600px;\n}\n\n.odd .container > div:nth-child(2) {\n  flex: 1;\n}\n\n.title {\n  font-size: 80px;\n  line-height: 1.05;\n  font-weight: 600;\n  letter-spacing: -0.015em;\n  text-align: left;\n}\n\n.desc {\n  padding: 1.6em 0;\n  max-width: 735px;\n  font-size: 23px;\n  text-align: left;\n}\n\n.contentContainer {\n  transform: translateY(50px);\n}\n\n@media screen and (max-width: 1024px) {\n  .container {\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n\n  .container > div {\n    padding: 50px 16px;\n    flex: 1 0 100% !important;\n  }\n\n  .container > div:nth-child(2) {\n    margin-left: 0;\n    padding: 0 16px 50px 16px;\n    max-width: none;\n  }\n\n  .title {\n    font-size: 60px;\n  }\n\n  .desc {\n    font-size: 20px;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
@@ -7296,8 +7345,7 @@ exports.locals = {
 	"odd": "C1T1uxQcE9pt19x-ss3r-",
 	"title": "_2OCZ2PVL2gB9nTB-O8ELB_",
 	"desc": "_2LBxAB7rSsdUgyQdC4KiLh",
-	"visible": "_3eaNyK4EiD_wM_w8qswyfy",
-	"notVisible": "WkUO2pUjhEIg4JTQSNn3A"
+	"contentContainer": "DX1yhGKowsH2fgmHY_uZi"
 };
 
 /***/ }),
