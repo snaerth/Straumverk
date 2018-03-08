@@ -9,6 +9,7 @@ import Navigation from '../components/navigation';
 import Slider from '../components/slider';
 import Menu from '../components/menu';
 import Section from '../components/section';
+import Employees from '../components/employees';
 import 'isomorphic-unfetch';
 
 class Index extends Component {
@@ -30,19 +31,19 @@ class Index extends Component {
 
     const slides = [
       {
-        image: '/static/img/25.jpg',
+        image: '/static/img/electric1.jpg',
         title: t.specialField,
         desc: t.specialFieldShortDesc,
         link: t.specialFieldLink,
       },
       {
-        image: '/static/img/28.jpg',
+        image: '/static/img/electric2.jpg',
         title: t.projects,
         desc: t.projectsShortDesc,
         link: t.projectsLink,
       },
       {
-        image: '/static/img/27.jpg',
+        image: '/static/img/electric3.jpg',
         title: t.partners,
         desc: t.partnersShortDesc,
         link: t.partnersLink,
@@ -56,23 +57,30 @@ class Index extends Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="/static/css/bulma.min.css" />
           <link rel="stylesheet" href="/static/css/base.css" />
+          <link rel="stylesheet" href="/static/css/style.css" />
         </Head>
         <main>
           <Navigation t={t} lang={lang} />
           <Menu open={menuOpen} t={t} />
           <Slider slides={slides} t={t} />
-          <Section title={t.partners} desc={t.partnersDesc} img="/static/img/19.jpg" id={1} />
+          <Employees />
+          <Section
+            title={t.partners}
+            desc={t.partnersDesc}
+            img="/static/img/electric4.jpg"
+            id={1}
+          />
           <Section
             title={t.projects}
             desc={t.projectsDesc}
-            img="/static/img/17.jpg"
+            img="/static/img/electric2.jpg"
             id={2}
             switch
           />
           <Section
             title={t.specialField}
             desc={t.specialFieldDesc}
-            img="/static/img/18.jpg"
+            img="/static/img/electric3.jpg"
             id={3}
           />
         </main>

@@ -50,6 +50,19 @@
   background-position: 50% 50%;
 }
 
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  user-select: none;
+  background: linear-gradient(to right, #efefbb, #d4d3dd);
+  opacity: 0.5;
+  overflow: hidden;
+}
+
 .slidenav {
   position: absolute;
   width: 300px;

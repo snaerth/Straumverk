@@ -70,7 +70,7 @@ class Section extends Component {
   }
 
   renderImage() {
-    const { img, title, id } = this.props;
+    const { img, title } = this.props;
 
     return (
       <div
@@ -84,8 +84,9 @@ class Section extends Component {
   }
 
   render() {
+    const { img, title, id } = this.props;
     return (
-      <section className={this.props.switch ? s.odd : ''}>
+      <section className={classnames(`section-${id}`, this.props.switch ? s.odd : '')}>
         <Waypoint onEnter={this.onEnter} bottomOffset="100px">
           <div className={classnames(s.container, 'container')}>
             <MediaQuery query="(max-width: 1023px)">

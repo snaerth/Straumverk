@@ -47,7 +47,7 @@ class Navigation extends Component {
 
       anime({
         targets: scroll,
-        y: top + window.pageYOffset - navHeight - 90,
+        y: top + window.pageYOffset - navHeight,
         duration: 350,
         easing: 'easeInOutCubic',
         update: () => window.scroll(0, scroll.y),
@@ -93,7 +93,9 @@ class Navigation extends Component {
         <div className={classnames(s.shadow, 'navbar is-fixed-top')} ref={r => (this.navbar = r)}>
           <div className="container">
             <div className="navbar-brand">
-              <a className={classnames(s.navbarBrand, 'navbar-item', 'title is-4')}>New Nordic</a>
+              <a className={classnames(s.navbarBrand, 'navbar-item', 'title is-4')}>
+                <img src="/static/img/logo.svg" alt="Straumverk" className={s.logo} /> STRAUMVERK
+              </a>
               <MediaQuery query="(max-width: 1023px)">
                 <div className={s.menu} onClick={this.toggleMenu}>
                   <img src="/static/img/menu.svg" />

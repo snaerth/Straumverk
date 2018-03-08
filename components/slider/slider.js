@@ -234,7 +234,10 @@ class Slider extends Component {
 
       return (
         <div key={i} className={classnames(s.slide, current === i ? s.current : '')}>
-          <div className={s.img} style={{ backgroundImage: `url(${image})` }} />
+          <div className={s.img} style={{ backgroundImage: `url(${image})` }}>
+            <div className={s.overlay} />
+          </div>
+
           <h2 className={s.title}>{title}</h2>
           <p className={s.desc}>{desc}</p>
           <a className={s.link} href="#">
