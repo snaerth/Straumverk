@@ -10,7 +10,9 @@
   "projectsDesc":
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   "projectsLink": "Skoða nánar",
-  "aboutUs": "Um okkur",
+  "aboutus": "Um okkur",
+  "aboutusDesc":
+    "Straumverk ehf er ungt og framsækið fyrirtæki á sviði raflagna og tengdri þjónustu. Starfsmenn fyrirtækisins hafa víðtæka reynslu á flestum sviðum rafiðnaðar, allt frá nýlögnum og viðhaldi raflagna upp í flóknar iðnstýringar í verksmiðjum og skipum. Fyrirtækið leggur metnað sinn í að þjónusta viðskiptavini sína eins vel og kostur er og útsjónarsamir starfsmenn fyrirtækisins leggja sig alla fram við að leysa málin faglega og örugglega.",
   "partners": "Samstarfsaðilar",
   "partnersShortDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   "partnersDesc":
@@ -18,5 +20,10 @@
   "partnersLink": "Skoða nánar",
   "employees": "Starfsmenn",
   "prev": "Fyrri",
-  "next": "Næsta"
+  "next": "Næsta",
+  "operations": "Starfsemi",
+  "operationsDesc":
+    "Straumverk tekur að sér Almennar raflagnir, Nýlagnir, Töflusmíði, Símalagnir og Netlagnir. Við höfum líka reynslu af vinnu við Iðnstýringar og raflagnir í skipum og bátum einnig. Hafðu samband og við gerum þér tilboð að kostaðarlausu.",
+  "contact": "Hafðu samband",
+  "contactDesc": "Hægt er að hafa samband í síma 888-4070 eða í gegnum straumverk@straumverk.is."
 }

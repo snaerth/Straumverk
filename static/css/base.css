@@ -182,22 +182,49 @@ body {
   color: var(--color-text);
 }
 
+h2 {
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-align: left;
+}
+
+button {
+  margin-bottom: 2em;
+}
+
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: 60px;
+  }
+}
+
 :root {
   --menu-background: #2a394f;
   --menu-background-hover: #212e41;
-  --section-background-grey: #fafafa;
+  --section-background-odd: #fafafa;
   --fontsize-stitle: 10vw;
+  --button-background: #6c63ff;
   --color-text: #000;
   --color-bg: #f1f1f1;
   --color-link: #000;
-  --color-link-hover: #0e54c1;
+  --color-link-hover: #6c63ff;
   --color-sbackground: #f1f1f1;
   --color-stitle: #000;
   --color-sdesc: #000;
   --color-slink: #000;
   --color-slink-hover: #000;
   --color-slink-bg: #fff;
-  --color-slink-hover-bg: #0e54c1;
+  --color-slink-hover-bg: #6c63ff;
   --color-nav: #000;
-  --color-nav-hover: #0e54ca;
+  --color-nav-hover: #6c63ff;
+}
+
+a.navbar-item.is-active,
+a.navbar-item:hover,
+a.navbar-link.is-active,
+a.navbar-link:hover {
+  background-color: transparent;
+  color: var(--button-background);
 }

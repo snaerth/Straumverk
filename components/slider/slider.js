@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import anime from 'animejs';
+import Button from '../button';
 import s from './slider.css';
-import { log } from 'util';
 
 // From https://davidwalsh.name/javascript-debounce-function.
 function debounce(func, wait, immediate) {
@@ -240,9 +240,7 @@ class Slider extends Component {
 
           <h2 className={s.title}>{title}</h2>
           <p className={s.desc}>{desc}</p>
-          <a className={s.link} href="#">
-            {link}
-          </a>
+          {link ? <Button>{link}</Button> : null}
         </div>
       );
     });

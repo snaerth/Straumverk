@@ -10,6 +10,8 @@ import Slider from '../components/slider';
 import Menu from '../components/menu';
 import Section from '../components/section';
 import Employees from '../components/employees';
+import Button from '../components/button';
+import Footer from '../components/footer';
 import 'isomorphic-unfetch';
 
 class Index extends Component {
@@ -32,28 +34,26 @@ class Index extends Component {
     const slides = [
       {
         image: '/static/img/electric1.jpg',
-        title: t.specialField,
+        title: 'Straumverk',
+        desc: 'Allt sem þú þarft á einum stað',
+      },
+      {
+        image: '/static/img/electric1.jpg',
+        title: t.operations,
         desc: t.specialFieldShortDesc,
         link: t.specialFieldLink,
       },
       {
-        image: '/static/img/electric2.jpg',
-        title: t.projects,
-        desc: t.projectsShortDesc,
-        link: t.projectsLink,
-      },
-      {
-        image: '/static/img/electric3.jpg',
-        title: t.partners,
-        desc: t.partnersShortDesc,
-        link: t.partnersLink,
+        image: '/static/img/electric4.jpg',
+        title: t.contact,
+        desc: t.contactDesc,
       },
     ];
 
     return (
       <div>
         <Head>
-          <title>New Nordic</title>
+          <title>Straumverk</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="/static/css/bulma.min.css" />
           <link rel="stylesheet" href="/static/css/base.css" />
@@ -63,26 +63,25 @@ class Index extends Component {
           <Navigation t={t} lang={lang} />
           <Menu open={menuOpen} t={t} />
           <Slider slides={slides} t={t} />
-          <Employees />
-          <Section
-            title={t.partners}
-            desc={t.partnersDesc}
-            img="/static/img/electric4.jpg"
-            id={1}
-          />
-          <Section
-            title={t.projects}
-            desc={t.projectsDesc}
-            img="/static/img/electric2.jpg"
-            id={2}
-            switch
-          />
-          <Section
-            title={t.specialField}
-            desc={t.specialFieldDesc}
-            img="/static/img/electric3.jpg"
-            id={3}
-          />
+
+          <Section img="/static/img/electric4.jpg" id={1} switch>
+            <h2>{t.operations}</h2>
+            <p>{t.operationsDesc}</p>
+          </Section>
+          <Section img="/static/img/28.jpg" id={2}>
+            <h2>{t.aboutus}</h2>
+            <p>{t.aboutusDesc}</p>
+          </Section>
+          <Section img="/static/img/electric2.jpg" id={3} switch>
+            <h2>{t.contact}</h2>
+            <p>{t.contactDesc}</p>
+            <div className="has-text-centered">
+              <a href="mailto:straumverk@straumverk.is">
+                <Button>{t.contact}</Button>
+              </a>
+            </div>
+          </Section>
+          <Footer t={t} />
         </main>
         <style jsx global>{`
           body {

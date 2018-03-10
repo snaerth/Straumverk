@@ -105,21 +105,14 @@ class Navigation extends Component {
             <div className="navbar-menu">
               <div className="navbar-end" onClick={this.clickHandler}>
                 <a className="navbar-item" data-id={1}>
-                  {t.partners}
+                  {t.operations}
                 </a>
                 <a className="navbar-item" data-id={2}>
-                  {t.projects}
+                  {t.aboutus}
                 </a>
                 <a className="navbar-item" data-id={3}>
-                  {t.specialField}
+                  {t.contact}
                 </a>
-                <a className="navbar-item" data-id={4}>
-                  {t.aboutUs}
-                </a>
-                <a className="navbar-item" data-id={5}>
-                  {t.employees}
-                </a>
-                {this.renderLang()}
               </div>
             </div>
           </div>

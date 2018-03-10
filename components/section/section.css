@@ -5,7 +5,7 @@
 }
 
 .odd {
-  background: var(--section-background-grey);
+  background: var(--section-background-odd);
 }
 
 .container > div {
@@ -32,7 +32,7 @@
   flex: 1;
 }
 
-.title {
+.contentContainer h2 {
   font-size: 80px;
   line-height: 1.05;
   font-weight: 600;
@@ -40,7 +40,7 @@
   text-align: left;
 }
 
-.desc {
+.contentContainer p {
   padding: 1.6em 0;
   max-width: 735px;
   font-size: 23px;
@@ -68,11 +68,15 @@
     max-width: none;
   }
 
-  .title {
+  .odd .container > div:first-child {
+    max-width: none;
+  }
+
+  .contentContainer h2 {
     font-size: 60px;
   }
 
-  .desc {
+  .contentContainer p {
     font-size: 20px;
   }
 }

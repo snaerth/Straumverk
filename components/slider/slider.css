@@ -2,6 +2,7 @@
   display: block;
   width: 100%;
   height: calc(100vh - 52px);
+  max-height: 700px;
   position: relative;
   overflow: hidden;
 }
@@ -59,6 +60,7 @@
   right: 0;
   user-select: none;
   background: linear-gradient(to right, #efefbb, #d4d3dd);
+  /*background: linear-gradient(to right,#F8A4D8, #6C63FF)*/
   opacity: 0.5;
   overflow: hidden;
 }

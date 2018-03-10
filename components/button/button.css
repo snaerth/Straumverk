@@ -1,0 +1,18 @@
+.button {
+  padding: 15px 40px;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  background-color: var(--button-background);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.button:hover {
+  transition: all 0.2s;
+  background: #fff;
+  color: inherit;
+  box-shadow: 0 13px 15px 0 rgba(0, 0, 0, 0.25);
+}

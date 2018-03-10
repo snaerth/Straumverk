@@ -55,7 +55,7 @@ class Section extends Component {
    * @param {Boolean} isVisible
    */
   renderText() {
-    const { title, desc, img, id } = this.props;
+    const { title, desc, img, id, children } = this.props;
 
     return (
       <div
@@ -63,8 +63,7 @@ class Section extends Component {
         key={shortid.generate()}
         ref={r => (this.content = r)}
       >
-        <h2 className={s.title}>{title}</h2>
-        <p className={s.desc}>{desc}</p>
+        {children}
       </div>
     );
   }
@@ -105,8 +104,7 @@ class Section extends Component {
 }
 
 Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   img: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   switch: PropTypes.bool,
