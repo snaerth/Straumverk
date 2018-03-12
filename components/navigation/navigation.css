@@ -25,3 +25,16 @@
 .logo {
   margin-right: 7px;
 }
+
+.mobileItemContainer {
+  justify-content: flex-end;
+  margin-left: auto;
+  align-items: stretch;
+  display: flex;
+}
+
+@media screen and (max-width: 550px) {
+  .mobileItemContainer {
+    display: none;
+  }
+}

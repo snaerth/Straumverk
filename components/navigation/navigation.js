@@ -97,8 +97,16 @@ class Navigation extends Component {
                 <img src="/static/img/logo.svg" alt="Straumverk" className={s.logo} /> STRAUMVERK
               </a>
               <MediaQuery query="(max-width: 1023px)">
-                <div className={s.menu} onClick={this.toggleMenu}>
-                  <img src="/static/img/menu.svg" />
+                <div className={s.mobileItemContainer}>
+                  <a className="navbar-item" data-id={1}>
+                    {t.operations}
+                  </a>
+                  <a className="navbar-item" data-id={2}>
+                    {t.aboutus}
+                  </a>
+                  <a className="navbar-item" data-id={3}>
+                    {t.contact}
+                  </a>
                 </div>
               </MediaQuery>
             </div>

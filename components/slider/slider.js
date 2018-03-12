@@ -197,8 +197,13 @@ class Slider extends Component {
           translateX: [dir === 'next' ? 200 : -200, 0],
         });
 
+        const targets = [];
+        for (let i = 0; i < newSlide.children.length; i++) {
+          targets.push(newSlide.children[i]);
+        }
+
         anime({
-          targets: [newSlide.children[1], newSlide.children[2], newSlide.children[3]],
+          targets,
           duration: animation.slides.duration * 2,
           easing: animation.slides.easing,
           delay: (t, i) => i * 100 + 100,

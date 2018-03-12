@@ -228,3 +228,9 @@ a.navbar-link:hover {
   background-color: transparent;
   color: var(--button-background);
 }
+
+@media screen and (max-width: 650px) {
+  .navbar-item {
+    padding: 0.5rem;
+  }
+}

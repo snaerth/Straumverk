@@ -75,7 +75,10 @@ class Section extends Component {
       <div
         key={shortid.generate()}
         ref={r => (this.imgContainer = r)}
-        className={this.props.switch ? s.imgContainerLeft : s.imgContainer}
+        className={classnames(
+          this.props.switch ? s.imgContainerLeft : s.imgContainer,
+          s.imgDefaultContainers
+        )}
       >
         <img src={img} alt={title} />
       </div>

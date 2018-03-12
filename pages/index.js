@@ -9,7 +9,6 @@ import Navigation from '../components/navigation';
 import Slider from '../components/slider';
 import Menu from '../components/menu';
 import Section from '../components/section';
-import Employees from '../components/employees';
 import Button from '../components/button';
 import Footer from '../components/footer';
 import 'isomorphic-unfetch';
