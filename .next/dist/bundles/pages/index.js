@@ -1582,7 +1582,7 @@ var pages_Index = function (_Component) {
               case 0:
                 lang = req.cookies && req.cookies.lang ? req.cookies.lang : 'is';
                 _context.next = 3;
-                return fetch("http://localhost:3000" + '/static/lang/' + lang + '.json');
+                return fetch("http://138.68.191.12:5000" + '/static/lang/' + lang + '.json');
 
               case 3:
                 res = _context.sent;
