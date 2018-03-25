@@ -6,8 +6,10 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 
 /**
  * Registers environment file to environment variables
+ *
+ * @param {Boolean} showLog
  */
-function registerEnvFile() {
+function registerEnvFile(showLog = true) {
   const envFileName = `.env.${nodeEnv}`;
   // Env file path
   const envFilePath = path.resolve(process.cwd(), envFileName);
@@ -17,7 +19,10 @@ function registerEnvFile() {
     console.error('Project is missing .env file');
     throw new Error(error);
   } else {
-    console.log(`✓  Registering environment variables from: ${envFileName}`);
+    if (showLog) {
+      console.log(`✓  Registering environment variables from: ${envFileName}`);
+    }
+
     return localEnv;
   }
 }

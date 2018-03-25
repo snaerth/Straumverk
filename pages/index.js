@@ -55,7 +55,11 @@ class Index extends Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="/static/css/bulma.min.css" />
           <link rel="stylesheet" href="/static/css/base.css" />
-          <link rel="stylesheet" href="/static/css/style.css" />
+          {process.env.NODE_ENV === 'production' ? (
+            <link rel="stylesheet" href="/_next/static/style.css" />
+          ) : (
+            <link rel="stylesheet" href="/static/css/style.css" />
+          )}
         </Head>
         <main>
           <Navigation t={t} lang={lang} />

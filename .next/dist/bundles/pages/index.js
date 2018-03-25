@@ -67,23 +67,104 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
 
-/***/ "./common/actions.js":
+module.exports = require("react");
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("classnames");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("animejs");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/regenerator");
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("next/link");
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-responsive");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(9);
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = setTranslations;
-/* harmony export (immutable) */ __webpack_exports__["a"] = getTranslations;
-/* harmony export (immutable) */ __webpack_exports__["c"] = toggleMenu;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("babel-runtime/regenerator");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__("axios");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__types__ = __webpack_require__("./common/types.js");
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+// EXTERNAL MODULE: external "babel-runtime/regenerator"
+var regenerator_ = __webpack_require__(5);
+var regenerator__default = /*#__PURE__*/__webpack_require__.n(regenerator_);
+
+// EXTERNAL MODULE: external "styled-jsx/style"
+var style_ = __webpack_require__(10);
+var style__default = /*#__PURE__*/__webpack_require__.n(style_);
+
+// EXTERNAL MODULE: external "react"
+var external__react_ = __webpack_require__(0);
+var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
+
+// EXTERNAL MODULE: external "next/head"
+var head_ = __webpack_require__(11);
+var head__default = /*#__PURE__*/__webpack_require__.n(head_);
+
+// EXTERNAL MODULE: external "redux"
+var external__redux_ = __webpack_require__(2);
+var external__redux__default = /*#__PURE__*/__webpack_require__.n(external__redux_);
+
+// EXTERNAL MODULE: external "next-redux-wrapper"
+var external__next_redux_wrapper_ = __webpack_require__(12);
+var external__next_redux_wrapper__default = /*#__PURE__*/__webpack_require__.n(external__next_redux_wrapper_);
+
+// EXTERNAL MODULE: external "axios"
+var external__axios_ = __webpack_require__(13);
+var external__axios__default = /*#__PURE__*/__webpack_require__.n(external__axios_);
+
+// CONCATENATED MODULE: ./common/types.js
+// Common
+var SET_LANG = 'set_lang';
+var TOGGLE_MENU = 'toggle_menu';
+// CONCATENATED MODULE: ./common/actions.js
 
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -106,7 +187,7 @@ function setTranslations() {
       translations: translations || null
     };
 
-    dispatch({ type: __WEBPACK_IMPORTED_MODULE_2__types__["a" /* SET_LANG */], payload: payload });
+    dispatch({ type: SET_LANG, payload: payload });
   };
 }
 
@@ -121,15 +202,15 @@ function getTranslations() {
   var lang = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'is';
 
   return function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(dispatch) {
+    var _ref = _asyncToGenerator( /*#__PURE__*/regenerator__default.a.mark(function _callee(dispatch) {
       var response, payload;
-      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+      return regenerator__default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/static/lang/' + lang + '.json');
+              return external__axios__default.a.get('/static/lang/' + lang + '.json');
 
             case 3:
               response = _context.sent;
@@ -139,7 +220,7 @@ function getTranslations() {
               };
 
 
-              dispatch({ type: __WEBPACK_IMPORTED_MODULE_2__types__["a" /* SET_LANG */], payload: payload });
+              dispatch({ type: SET_LANG, payload: payload });
               _context.next = 11;
               break;
 
@@ -168,39 +249,36 @@ function getTranslations() {
  * @param {Boolean} menuOpen - State of navigatin menu
  */
 function toggleMenu(menuOpen) {
-  return { type: __WEBPACK_IMPORTED_MODULE_2__types__["b" /* TOGGLE_MENU */], payload: menuOpen };
+  return { type: TOGGLE_MENU, payload: menuOpen };
 }
+// EXTERNAL MODULE: external "redux-thunk"
+var external__redux_thunk_ = __webpack_require__(14);
+var external__redux_thunk__default = /*#__PURE__*/__webpack_require__.n(external__redux_thunk_);
 
-/***/ }),
-
-/***/ "./common/reducer.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__types__ = __webpack_require__("./common/types.js");
+// CONCATENATED MODULE: ./common/reducer.js
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
 
-var initialState = {
+var reducer_initialState = {
   avaliableLang: ['is', 'en'],
   lang: 'is',
   translations: null,
   menuOpen: false
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+/* harmony default export */ var reducer = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : reducer_initialState;
   var action = arguments[1];
 
   switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_0__types__["a" /* SET_LANG */]:
+    case SET_LANG:
       return _extends({}, state, {
         lang: action.payload.lang,
         translations: action.payload.translations
       });
 
-    case __WEBPACK_IMPORTED_MODULE_0__types__["b" /* TOGGLE_MENU */]:
+    case TOGGLE_MENU:
       return _extends({}, state, {
         menuOpen: action.payload
       });
@@ -209,37 +287,16 @@ var initialState = {
       return _extends({}, state);
   }
 });
-
-/***/ }),
-
-/***/ "./common/rootReducer.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducer__ = __webpack_require__("./common/reducer.js");
+// CONCATENATED MODULE: ./common/rootReducer.js
 
 
 
-var rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
-  common: __WEBPACK_IMPORTED_MODULE_1__reducer__["a" /* default */]
+var rootReducer = Object(external__redux_["combineReducers"])({
+  common: reducer
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (rootReducer);
-
-/***/ }),
-
-/***/ "./common/store.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = configureStore;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk__ = __webpack_require__("redux-thunk");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_redux_thunk__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rootReducer__ = __webpack_require__("./common/rootReducer.js");
+/* harmony default export */ var common_rootReducer = (rootReducer);
+// CONCATENATED MODULE: ./common/store.js
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 
@@ -247,538 +304,41 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 function configureStore(initialState) {
-  var store = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["createStore"])(__WEBPACK_IMPORTED_MODULE_2__rootReducer__["a" /* default */], initialState, Object(__WEBPACK_IMPORTED_MODULE_0_redux__["compose"])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["applyMiddleware"])(__WEBPACK_IMPORTED_MODULE_1_redux_thunk___default.a), (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : function (f) {
+  var store = Object(external__redux_["createStore"])(common_rootReducer, initialState, Object(external__redux_["compose"])(Object(external__redux_["applyMiddleware"])(external__redux_thunk__default.a), (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : function (f) {
     return f;
   }));
 
   return store;
 }
-
-/***/ }),
-
-/***/ "./common/types.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SET_LANG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TOGGLE_MENU; });
-// Common
-var SET_LANG = 'set_lang';
-var TOGGLE_MENU = 'toggle_menu';
-
-/***/ }),
-
-/***/ "./components/button/button.css":
-/***/ (function(module, exports) {
-
-module.exports = {
-	"button": "_7lCAZ3L8bd8-DLnlo_N6u"
-};
-
-/***/ }),
-
-/***/ "./components/button/button.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button_css__ = __webpack_require__("./components/button/button.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__button_css__);
-var _jsxFileName = '/Users/snaerthoroddsson/Projects/straumverk_new/components/button/button.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-var Button = function (_Component) {
-  _inherits(Button, _Component);
-
-  function Button() {
-    _classCallCheck(this, Button);
-
-    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
-  }
-
-  _createClass(Button, [{
-    key: 'render',
-    value: function render() {
-      var children = this.props.children;
-
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { className: __WEBPACK_IMPORTED_MODULE_2__button_css___default.a.button, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 8
-          }
-        },
-        children
-      );
-    }
-  }]);
-
-  return Button;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-Button.propTypes = {
-  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Button);
-
-/***/ }),
-
-/***/ "./components/button/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__button__ = __webpack_require__("./components/button/button.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__button__["a"]; });
-
-
-/***/ }),
-
-/***/ "./components/footer/footer.css":
-/***/ (function(module, exports) {
-
-module.exports = {
-	"container": "_1uYiT3lVTswiNlYVkzx3mm"
-};
-
-/***/ }),
-
-/***/ "./components/footer/footer.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_css__ = __webpack_require__("./components/footer/footer.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__footer_css__);
-var _jsxFileName = '/Users/snaerthoroddsson/Projects/straumverk_new/components/footer/footer.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-var Footer = function (_Component) {
-  _inherits(Footer, _Component);
-
-  function Footer() {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
-  }
-
-  _createClass(Footer, [{
-    key: 'render',
-    value: function render() {
-      var t = this.props.t;
-
-
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'footer',
-        { className: __WEBPACK_IMPORTED_MODULE_2__footer_css___default.a.container, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 10
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'container', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 11
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'content has-text-centered', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 12
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'p',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 13
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'strong',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 14
-                  }
-                },
-                'Straumverk ehf.'
-              ),
-              ' \xB7 Netfang:',
-              ' ',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { href: 'mailto:straumverk@straumverk.is', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 15
-                  }
-                },
-                'straumverk@straumverk.is'
-              ),
-              ' \xB7 Kt.640517-0500 \xB7 Vsk.129428 \xB7 S\xEDmi: ',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { href: 'tel:+3548884070', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 16
-                  }
-                },
-                '888-4070'
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Footer;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-Footer.propTypes = {
-  t: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object.isRequired
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Footer);
-
-/***/ }),
-
-/***/ "./components/footer/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__footer__ = __webpack_require__("./components/footer/footer.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__footer__["a"]; });
-
-
-/***/ }),
-
-/***/ "./components/menu/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__menu__ = __webpack_require__("./components/menu/menu.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__menu__["a"]; });
-
-
-/***/ }),
-
-/***/ "./components/menu/menu.css":
-/***/ (function(module, exports) {
-
-module.exports = {
-	"container": "_3gaHK69gNcc-UPrlB3V_29",
-	"open": "_3fSFQBiayPDugr0-dBRL3F",
-	"dropdown": "_1zNxHTZcC_Ed7qGzl4h4BA",
-	"active": "rB7o2U1kUzFmsV0dtICiv"
-};
-
-/***/ }),
-
-/***/ "./components/menu/menu.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames__ = __webpack_require__("classnames");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_animejs__ = __webpack_require__("animejs");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_animejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__menu_css__ = __webpack_require__("./components/menu/menu.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__menu_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__menu_css__);
-var _jsxFileName = '/Users/snaerthoroddsson/Projects/straumverk_new/components/menu/menu.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-// Styles
-
-
-var Menu = function (_Component) {
-  _inherits(Menu, _Component);
-
-  function Menu() {
-    _classCallCheck(this, Menu);
-
-    return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
-  }
-
-  _createClass(Menu, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate(prevProps, prevState) {
-      if (this.props.open) {
-        this.animateNavLinks();
-      }
-    }
-  }, {
-    key: 'animateNavLinks',
-    value: function animateNavLinks() {
-      var tl = __WEBPACK_IMPORTED_MODULE_4_animejs___default.a.timeline({
-        targets: this.ul.children,
-        duration: 600,
-        easing: 'easeOutQuint',
-        delay: function delay(t, i) {
-          return i * 100 + 100;
-        }
-      });
-
-      tl.add({
-        translateX: '-100%',
-        opacity: {
-          value: 0
-        },
-        duration: 0
-      }).add({
-        translateX: '0%',
-        opacity: {
-          value: 1,
-          duration: 700
-        },
-        delay: function delay(t, i) {
-          return i * 100 + 100;
-        }
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          open = _props.open,
-          t = _props.t;
-
-
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()(__WEBPACK_IMPORTED_MODULE_5__menu_css___default.a.container, open ? __WEBPACK_IMPORTED_MODULE_5__menu_css___default.a.open : ''), __source: {
-            fileName: _jsxFileName,
-            lineNumber: 46
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: __WEBPACK_IMPORTED_MODULE_5__menu_css___default.a.dropdown, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 47
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'ul',
-            { ref: function ref(c) {
-                return _this2.ul = c;
-              }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 48
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 49
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 50
-                  }
-                },
-                t.aboutUs
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 52
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 53
-                  }
-                },
-                t.specialField
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 55
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 56
-                  }
-                },
-                t.projects
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 58
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 59
-                  }
-                },
-                t.partners
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 61
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 62
-                  }
-                },
-                t.employees
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Menu;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-Menu.propTypes = {
-  open: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool.isRequired
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Menu);
-
-/***/ }),
-
-/***/ "./components/navigation/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navigation__ = __webpack_require__("./components/navigation/navigation.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__navigation__["a"]; });
-
-
-/***/ }),
-
-/***/ "./components/navigation/navigation.css":
-/***/ (function(module, exports) {
-
-module.exports = {
-	"navbarBackground": "_1uJmI3JZwfT7nT7555uYNM",
-	"shadow": "_3dYmPzS0-NNJeZMBHbjznA",
-	"menu": "_3wP7k_DrMZUIccMkqnK2CT",
-	"navbarBrand": "_27_b-RfrL5QPVN5U6sEIDK",
-	"logo": "_1N4Apt69c24EowW2A17mtF",
-	"mobileItemContainer": "_2O7r4deNmK_QSxsdCCMkR9"
-};
-
-/***/ }),
-
-/***/ "./components/navigation/navigation.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames__ = __webpack_require__("classnames");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_animejs__ = __webpack_require__("animejs");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_animejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_responsive__ = __webpack_require__("react-responsive");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_responsive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_responsive__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_actions__ = __webpack_require__("./common/actions.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__navigation_css__ = __webpack_require__("./components/navigation/navigation.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__navigation_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__navigation_css__);
-var _jsxFileName = '/Users/snaerthoroddsson/Projects/straumverk_new/components/navigation/navigation.js';
-
+// EXTERNAL MODULE: external "react-redux"
+var external__react_redux_ = __webpack_require__(15);
+var external__react_redux__default = /*#__PURE__*/__webpack_require__.n(external__react_redux_);
+
+// EXTERNAL MODULE: external "prop-types"
+var external__prop_types_ = __webpack_require__(1);
+var external__prop_types__default = /*#__PURE__*/__webpack_require__.n(external__prop_types_);
+
+// EXTERNAL MODULE: external "classnames"
+var external__classnames_ = __webpack_require__(3);
+var external__classnames__default = /*#__PURE__*/__webpack_require__.n(external__classnames_);
+
+// EXTERNAL MODULE: external "animejs"
+var external__animejs_ = __webpack_require__(4);
+var external__animejs__default = /*#__PURE__*/__webpack_require__.n(external__animejs_);
+
+// EXTERNAL MODULE: external "next/link"
+var link_ = __webpack_require__(6);
+var link__default = /*#__PURE__*/__webpack_require__.n(link_);
+
+// EXTERNAL MODULE: external "react-responsive"
+var external__react_responsive_ = __webpack_require__(7);
+var external__react_responsive__default = /*#__PURE__*/__webpack_require__.n(external__react_responsive_);
+
+// EXTERNAL MODULE: ./components/navigation/navigation.css
+var navigation = __webpack_require__(16);
+var navigation_default = /*#__PURE__*/__webpack_require__.n(navigation);
+
+// CONCATENATED MODULE: ./components/navigation/navigation.js
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -798,7 +358,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Navigation = function (_Component) {
+var navigation_Navigation = function (_Component) {
   _inherits(Navigation, _Component);
 
   function Navigation(props) {
@@ -849,7 +409,7 @@ var Navigation = function (_Component) {
           y: window.pageYOffset
         };
 
-        __WEBPACK_IMPORTED_MODULE_4_animejs___default()({
+        external__animejs__default()({
           targets: scroll,
           y: top + window.pageYOffset - navHeight,
           duration: 350,
@@ -895,15 +455,11 @@ var Navigation = function (_Component) {
 
       return avaliableLang.map(function (item) {
         if (item !== lang) {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          return external__react__default.a.createElement(
             'a',
             { className: 'navbar-item', key: item, onClick: function onClick() {
                 return _this2.changeLang(item);
-              }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 80
-              }
-            },
+              } },
             item.toUpperCase()
           );
         }
@@ -919,133 +475,69 @@ var Navigation = function (_Component) {
           menuOpen = _props2.menuOpen;
 
 
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return external__react__default.a.createElement(
         'nav',
-        { className: __WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBackground, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 92
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        { className: navigation_default.a.navbarBackground },
+        external__react__default.a.createElement(
           'div',
-          { className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()(__WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.shadow, 'navbar is-fixed-top'), ref: function ref(r) {
+          { className: external__classnames__default()(navigation_default.a.shadow, 'navbar is-fixed-top'), ref: function ref(r) {
               return _this3.navbar = r;
-            }, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 93
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            } },
+          external__react__default.a.createElement(
             'div',
-            { className: 'container', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 94
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            { className: 'container' },
+            external__react__default.a.createElement(
               'div',
-              { className: 'navbar-brand', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 95
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              { className: 'navbar-brand' },
+              external__react__default.a.createElement(
                 'a',
-                { className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()(__WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.navbarBrand, 'navbar-item', 'title is-4'), __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 96
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/static/img/logo.svg', alt: 'Straumverk', className: __WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.logo, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 97
-                  }
-                }),
+                { className: external__classnames__default()(navigation_default.a.navbarBrand, 'navbar-item', 'title is-4') },
+                external__react__default.a.createElement('img', { src: '/static/img/logo.svg', alt: 'Straumverk', className: navigation_default.a.logo }),
                 ' STRAUMVERK'
               ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_7_react_responsive___default.a,
-                { query: '(max-width: 1023px)', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 99
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              external__react__default.a.createElement(
+                external__react_responsive__default.a,
+                { query: '(max-width: 1023px)' },
+                external__react__default.a.createElement(
                   'div',
-                  { className: __WEBPACK_IMPORTED_MODULE_9__navigation_css___default.a.mobileItemContainer, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 100
-                    }
-                  },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  { className: navigation_default.a.mobileItemContainer },
+                  external__react__default.a.createElement(
                     'a',
-                    { className: 'navbar-item', 'data-id': 1, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 101
-                      }
-                    },
+                    { className: 'navbar-item', 'data-id': 1 },
                     t.operations
                   ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  external__react__default.a.createElement(
                     'a',
-                    { className: 'navbar-item', 'data-id': 2, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 104
-                      }
-                    },
+                    { className: 'navbar-item', 'data-id': 2 },
                     t.aboutus
                   ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  external__react__default.a.createElement(
                     'a',
-                    { className: 'navbar-item', 'data-id': 3, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 107
-                      }
-                    },
+                    { className: 'navbar-item', 'data-id': 3 },
                     t.contact
                   )
                 )
               )
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            external__react__default.a.createElement(
               'div',
-              { className: 'navbar-menu', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 113
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              { className: 'navbar-menu' },
+              external__react__default.a.createElement(
                 'div',
-                { className: 'navbar-end', onClick: this.clickHandler, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 114
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                { className: 'navbar-end', onClick: this.clickHandler },
+                external__react__default.a.createElement(
                   'a',
-                  { className: 'navbar-item', 'data-id': 1, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 115
-                    }
-                  },
+                  { className: 'navbar-item', 'data-id': 1 },
                   t.operations
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                external__react__default.a.createElement(
                   'a',
-                  { className: 'navbar-item', 'data-id': 2, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 118
-                    }
-                  },
+                  { className: 'navbar-item', 'data-id': 2 },
                   t.aboutus
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                external__react__default.a.createElement(
                   'a',
-                  { className: 'navbar-item', 'data-id': 3, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 121
-                    }
-                  },
+                  { className: 'navbar-item', 'data-id': 3 },
                   t.contact
                 )
               )
@@ -1057,12 +549,7 @@ var Navigation = function (_Component) {
   }]);
 
   return Navigation;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-Navigation.propTypes = {
-  t: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.object.isRequired,
-  lang: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired
-};
+}(external__react_["Component"]);
 
 /**
  * Maps redux state to props
@@ -1088,316 +575,70 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: Object(__WEBPACK_IMPORTED_MODULE_6_redux__["bindActionCreators"])({ getTranslations: __WEBPACK_IMPORTED_MODULE_8__common_actions__["a" /* getTranslations */], toggleMenu: __WEBPACK_IMPORTED_MODULE_8__common_actions__["c" /* toggleMenu */] }, dispatch)
+    actions: Object(external__redux_["bindActionCreators"])({ getTranslations: getTranslations, toggleMenu: toggleMenu }, dispatch)
   };
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(Navigation));
+/* harmony default export */ var navigation_navigation = (Object(external__react_redux_["connect"])(mapStateToProps, mapDispatchToProps)(navigation_Navigation));
+// CONCATENATED MODULE: ./components/navigation/index.js
 
-/***/ }),
+// EXTERNAL MODULE: ./components/button/button.css
+var button_button = __webpack_require__(17);
+var button_default = /*#__PURE__*/__webpack_require__.n(button_button);
 
-/***/ "./components/section/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+// CONCATENATED MODULE: ./components/button/button.js
+var button__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__section__ = __webpack_require__("./components/section/section.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__section__["a"]; });
+function button__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function button__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-/***/ }),
-
-/***/ "./components/section/section.css":
-/***/ (function(module, exports) {
-
-module.exports = {
-	"container": "_1Z5oshflTfpw5zMbBL0Dfr",
-	"odd": "C1T1uxQcE9pt19x-ss3r-",
-	"contentContainer": "DX1yhGKowsH2fgmHY_uZi",
-	"imgDefaultContainers": "_37FObub0x0KYZK3CkOeYQm"
-};
-
-/***/ }),
-
-/***/ "./components/section/section.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__("classnames");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_waypoint__ = __webpack_require__("react-waypoint");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_waypoint___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_waypoint__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_shortid__ = __webpack_require__("shortid");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_shortid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_shortid__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_animejs__ = __webpack_require__("animejs");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_animejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_responsive__ = __webpack_require__("react-responsive");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_responsive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_responsive__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__section_css__ = __webpack_require__("./components/section/section.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__section_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__section_css__);
-var _jsxFileName = '/Users/snaerthoroddsson/Projects/straumverk_new/components/section/section.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function button__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
 
 
+var button_Button = function (_Component) {
+  button__inherits(Button, _Component);
 
+  function Button() {
+    button__classCallCheck(this, Button);
 
-
-
-
-var Section = function (_Component) {
-  _inherits(Section, _Component);
-
-  function Section(props) {
-    _classCallCheck(this, Section);
-
-    var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
-
-    _this.onEnter = _this.onEnter.bind(_this);
-    _this.tl = null;
-    _this.hasAnimated = false;
-    return _this;
+    return button__possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
   }
 
-  _createClass(Section, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.tl = __WEBPACK_IMPORTED_MODULE_5_animejs___default.a.timeline();
-    }
-  }, {
-    key: 'onEnter',
-    value: function onEnter(_ref) {
-      var currentPosition = _ref.currentPosition,
-          previousPosition = _ref.previousPosition;
-
-      if (this.hasAnimated === false) {
-        this.tl.add({
-          targets: this.imgContainer,
-          duration: 0,
-          translateX: this.props.switch ? -100 : 100
-        }).add({
-          targets: [this.content.children[0], this.content.children[1]],
-          duration: 2000,
-          easing: 'easeOutQuint',
-          delay: function delay(t, i) {
-            return i * 100 + 200;
-          },
-          translateY: -50,
-          opacity: [0, 1]
-        }).add({
-          targets: this.imgContainer,
-          offset: '-=1200', // Starts 1000ms before the previous animation ends
-          duration: 1200,
-          easing: 'easeOutQuint',
-          delay: function delay(t, i) {
-            return i * 100 + 100;
-          },
-          translateX: 0,
-          opacity: [0, 1]
-        });
-
-        this.hasAnimated = true;
-      }
-    }
-
-    /**
-     * Renders section content
-     *
-     * @param {Boolean} isVisible
-     */
-
-  }, {
-    key: 'renderText',
-    value: function renderText() {
-      var _this2 = this;
-
-      var _props = this.props,
-          title = _props.title,
-          desc = _props.desc,
-          img = _props.img,
-          id = _props.id,
-          children = _props.children;
-
-
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        {
-          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('section-' + id, __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.contentContainer),
-          key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(),
-          ref: function ref(r) {
-            return _this2.content = r;
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 61
-          }
-        },
-        children
-      );
-    }
-  }, {
-    key: 'renderImage',
-    value: function renderImage() {
-      var _this3 = this;
-
-      var _props2 = this.props,
-          img = _props2.img,
-          title = _props2.title;
-
-
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        {
-          key: __WEBPACK_IMPORTED_MODULE_4_shortid___default.a.generate(),
-          ref: function ref(r) {
-            return _this3.imgContainer = r;
-          },
-          className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(this.props.switch ? __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.imgContainerLeft : __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.imgContainer, __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.imgDefaultContainers),
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 75
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: img, alt: title, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 83
-          }
-        })
-      );
-    }
-  }, {
+  button__createClass(Button, [{
     key: 'render',
     value: function render() {
-      var _props3 = this.props,
-          img = _props3.img,
-          title = _props3.title,
-          id = _props3.id;
+      var children = this.props.children;
 
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'section',
-        { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()('section-' + id, this.props.switch ? __WEBPACK_IMPORTED_MODULE_7__section_css___default.a.odd : ''), __source: {
-            fileName: _jsxFileName,
-            lineNumber: 91
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_3_react_waypoint___default.a,
-          { onEnter: this.onEnter, bottomOffset: '100px', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 92
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_7__section_css___default.a.container, 'container'), __source: {
-                fileName: _jsxFileName,
-                lineNumber: 93
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_6_react_responsive___default.a,
-              { query: '(max-width: 1023px)', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 94
-                }
-              },
-              [this.renderText(), this.renderImage()]
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_6_react_responsive___default.a,
-              { query: '(min-width: 1024px)', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 97
-                }
-              },
-              this.props.switch ? [this.renderImage(), this.renderText()] : [this.renderText(), this.renderImage()]
-            )
-          )
-        )
+      return external__react__default.a.createElement(
+        'button',
+        { className: button_default.a.button },
+        children
       );
     }
   }]);
 
-  return Section;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+  return Button;
+}(external__react_["Component"]);
 
-Section.propTypes = {
-  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node.isRequired,
-  img: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
-  id: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number.isRequired,
-  switch: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool
-};
+/* harmony default export */ var components_button_button = (button_Button);
+// CONCATENATED MODULE: ./components/button/index.js
 
-/* harmony default export */ __webpack_exports__["a"] = (Section);
+// EXTERNAL MODULE: ./components/slider/slider.css
+var slider = __webpack_require__(18);
+var slider_default = /*#__PURE__*/__webpack_require__.n(slider);
 
-/***/ }),
+// CONCATENATED MODULE: ./components/slider/slider.js
+var slider__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-/***/ "./components/slider/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+function slider__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slider__ = __webpack_require__("./components/slider/slider.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__slider__["a"]; });
+function slider__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-
-/***/ }),
-
-/***/ "./components/slider/slider.css":
-/***/ (function(module, exports) {
-
-module.exports = {
-	"slideshow": "_3mQAG8KB_bTN-ppYA_RS4E",
-	"slides": "v6Cc8nV4cP2a7HVfVzxMD",
-	"svgFrame": "Yy2eMgoeyk6OpooEeF88u",
-	"slide": "_1Mw7gSBLrCdMrkr9HK5Str",
-	"current": "_1Z4SR4Hn6p958JTUkn282g",
-	"img": "_320OsCHVLvOknYZsr7JWfa",
-	"overlay": "_3ZKoUq4Q5yljaqWBYi1jyl",
-	"slidenav": "SCd8CrIC7JWbM1B4H69B4",
-	"item": "_34xqVmIiHzF0IkoWYcg9FJ",
-	"title": "_3MoNsIAcgW_HZDgLdNr3v3",
-	"desc": "mKABq8Hn469vnYqXNRhKP",
-	"link": "_1qQuNit2FEpmov8hG7w8S_"
-};
-
-/***/ }),
-
-/***/ "./components/slider/slider.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__("classnames");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_animejs__ = __webpack_require__("animejs");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_animejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__button__ = __webpack_require__("./components/button/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__slider_css__ = __webpack_require__("./components/slider/slider.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__slider_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__slider_css__);
-var _jsxFileName = '/Users/snaerthoroddsson/Projects/straumverk_new/components/slider/slider.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function slider__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
@@ -1427,13 +668,13 @@ function debounce(func, wait, immediate) {
   };
 }
 
-var Slider = function (_Component) {
-  _inherits(Slider, _Component);
+var slider_Slider = function (_Component) {
+  slider__inherits(Slider, _Component);
 
   function Slider(props) {
-    _classCallCheck(this, Slider);
+    slider__classCallCheck(this, Slider);
 
-    var _this2 = _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).call(this, props));
+    var _this2 = slider__possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).call(this, props));
 
     _this2.state = {
       animation: {
@@ -1463,7 +704,7 @@ var Slider = function (_Component) {
     return _this2;
   }
 
-  _createClass(Slider, [{
+  slider__createClass(Slider, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this3 = this;
@@ -1508,7 +749,7 @@ var Slider = function (_Component) {
       svg.setAttribute('class', 'shape');
       svg.setAttribute('width', '100%');
       svg.setAttribute('height', '100%');
-      svg.setAttribute('class', __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.svgFrame);
+      svg.setAttribute('class', slider_default.a.svgFrame);
       svg.setAttribute('viewbox', '0 0 ' + rect.width + ' ' + rect.height);
       svg.innerHTML = '<path fill="' + frameFill + '" d="' + paths.initial + '"/>';
       slideshow.insertBefore(svg, this.slidenav);
@@ -1581,7 +822,7 @@ var Slider = function (_Component) {
       if (this.isAnimating) return false;
       this.isAnimating = true;
 
-      var animateShapeIn = __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+      var animateShapeIn = external__animejs__default()({
         targets: shape,
         duration: animation.shape.duration,
         easing: animation.shape.easing.in,
@@ -1593,13 +834,13 @@ var Slider = function (_Component) {
           var currentSlide = slides.children[current];
           var slidesTotal = slides.children.length;
 
-          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+          external__animejs__default()({
             targets: currentSlide,
             duration: animation.slides.duration,
             easing: animation.slides.easing,
             translateX: dir === 'next' ? -1 * width : width,
             complete: function complete() {
-              currentSlide.classList.remove(__WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.current);
+              currentSlide.classList.remove(slider_default.a.current);
               resolve();
             }
           });
@@ -1607,9 +848,9 @@ var Slider = function (_Component) {
           current = dir === 'next' ? current < slidesTotal - 1 ? current + 1 : 0 : current > 0 ? current - 1 : slidesTotal - 1;
 
           var newSlide = slides.children[current];
-          newSlide.classList.add(__WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.current);
+          newSlide.classList.add(slider_default.a.current);
 
-          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+          external__animejs__default()({
             targets: newSlide,
             duration: animation.slides.duration,
             easing: animation.slides.easing,
@@ -1617,9 +858,9 @@ var Slider = function (_Component) {
           });
 
           var newSlideImg = newSlide;
-          __WEBPACK_IMPORTED_MODULE_3_animejs___default.a.remove(newSlideImg);
+          external__animejs__default.a.remove(newSlideImg);
 
-          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+          external__animejs__default()({
             targets: newSlideImg,
             duration: animation.slides.duration,
             easing: animation.slides.easing,
@@ -1631,7 +872,7 @@ var Slider = function (_Component) {
             targets.push(newSlide.children[i]);
           }
 
-          __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+          external__animejs__default()({
             targets: targets,
             duration: animation.slides.duration * 2,
             easing: animation.slides.easing,
@@ -1645,7 +886,7 @@ var Slider = function (_Component) {
       };
 
       var animateShapeOut = function animateShapeOut() {
-        __WEBPACK_IMPORTED_MODULE_3_animejs___default()({
+        external__animejs__default()({
           targets: shape,
           duration: animation.shape.duration,
           delay: 150,
@@ -1674,53 +915,28 @@ var Slider = function (_Component) {
             link = slide.link;
 
 
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        return external__react__default.a.createElement(
           'div',
-          { key: i, className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.slide, current === i ? __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.current : ''), __source: {
-              fileName: _jsxFileName,
-              lineNumber: 241
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          { key: i, className: external__classnames__default()(slider_default.a.slide, current === i ? slider_default.a.current : '') },
+          external__react__default.a.createElement(
             'div',
-            { className: __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.img, style: { backgroundImage: 'url(' + image + ')' }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 242
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.overlay, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 243
-              }
-            })
+            { className: slider_default.a.img, style: { backgroundImage: 'url(' + image + ')' } },
+            external__react__default.a.createElement('div', { className: slider_default.a.overlay })
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          external__react__default.a.createElement(
             'h2',
-            { className: __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.title, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 246
-              }
-            },
+            { className: slider_default.a.title },
             title
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', {
-            className: __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.desc,
+          external__react__default.a.createElement('p', {
+            className: slider_default.a.desc,
             dangerouslySetInnerHTML: {
               __html: desc
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 247
             }
           }),
-          link ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_4__button__["a" /* default */],
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 253
-              }
-            },
+          link ? external__react__default.a.createElement(
+            components_button_button,
+            null,
             link
           ) : null
         );
@@ -1734,65 +950,40 @@ var Slider = function (_Component) {
       var t = this.props.t;
 
 
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return external__react__default.a.createElement(
         'div',
-        { className: __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.slideshow, ref: function ref(r) {
+        { className: slider_default.a.slideshow, ref: function ref(r) {
             return _this5.slideshow = r;
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 263
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          } },
+        external__react__default.a.createElement(
           'div',
-          { className: __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.slides, ref: function ref(r) {
+          { className: slider_default.a.slides, ref: function ref(r) {
               return _this5.slides = r;
-            }, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 264
-            }
-          },
+            } },
           this.renderSlides()
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        external__react__default.a.createElement(
           'nav',
-          { className: __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.slidenav, ref: function ref(r) {
+          { className: slider_default.a.slidenav, ref: function ref(r) {
               return _this5.slidenav = r;
-            }, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 267
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            } },
+          external__react__default.a.createElement(
             'button',
-            { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.item, __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.prev), onClick: function onClick() {
+            { className: external__classnames__default()(slider_default.a.item, slider_default.a.prev), onClick: function onClick() {
                 return _this5.prevSlide();
-              }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 268
-              }
-            },
+              } },
             t.prev
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          external__react__default.a.createElement(
             'span',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 271
-              }
-            },
+            null,
             '/'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          external__react__default.a.createElement(
             'button',
-            { className: __WEBPACK_IMPORTED_MODULE_2_classnames___default()(__WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.item, __WEBPACK_IMPORTED_MODULE_5__slider_css___default.a.next), onClick: function onClick() {
+            { className: external__classnames__default()(slider_default.a.item, slider_default.a.next), onClick: function onClick() {
                 return _this5.nextSlide();
-              }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 272
-              }
-            },
+              } },
             t.next
           )
         )
@@ -1801,85 +992,451 @@ var Slider = function (_Component) {
   }]);
 
   return Slider;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+}(external__react_["Component"]);
 
-Slider.propTypes = {
-  slides: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.array.isRequired,
-  t: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object.isRequired
-};
+/* harmony default export */ var slider_slider = (slider_Slider);
+// CONCATENATED MODULE: ./components/slider/index.js
 
-/* harmony default export */ __webpack_exports__["a"] = (Slider);
+// EXTERNAL MODULE: ./components/menu/menu.css
+var menu = __webpack_require__(19);
+var menu_default = /*#__PURE__*/__webpack_require__.n(menu);
 
-/***/ }),
+// CONCATENATED MODULE: ./components/menu/menu.js
+var menu__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-/***/ "./pages/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+function menu__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("babel-runtime/regenerator");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_jsx_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head__ = __webpack_require__("next/head");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_redux_wrapper__ = __webpack_require__("next-redux-wrapper");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_redux_wrapper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_next_redux_wrapper__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_actions__ = __webpack_require__("./common/actions.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_types__ = __webpack_require__("./common/types.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_store__ = __webpack_require__("./common/store.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_navigation__ = __webpack_require__("./components/navigation/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_slider__ = __webpack_require__("./components/slider/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_menu__ = __webpack_require__("./components/menu/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_section__ = __webpack_require__("./components/section/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_button__ = __webpack_require__("./components/button/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_footer__ = __webpack_require__("./components/footer/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_isomorphic_unfetch__);
+function menu__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-var _jsxFileName = '/Users/snaerthoroddsson/Projects/straumverk_new/pages/index.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function menu__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
 
 
 
+// Styles
 
 
+var menu_Menu = function (_Component) {
+  menu__inherits(Menu, _Component);
 
+  function Menu() {
+    menu__classCallCheck(this, Menu);
 
-
-
-
-
-
-
-var Index = function (_Component) {
-  _inherits(Index, _Component);
-
-  function Index() {
-    _classCallCheck(this, Index);
-
-    return _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).apply(this, arguments));
+    return menu__possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
   }
 
-  _createClass(Index, [{
+  menu__createClass(Menu, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (this.props.open) {
+        this.animateNavLinks();
+      }
+    }
+  }, {
+    key: 'animateNavLinks',
+    value: function animateNavLinks() {
+      var tl = external__animejs__default.a.timeline({
+        targets: this.ul.children,
+        duration: 600,
+        easing: 'easeOutQuint',
+        delay: function delay(t, i) {
+          return i * 100 + 100;
+        }
+      });
+
+      tl.add({
+        translateX: '-100%',
+        opacity: {
+          value: 0
+        },
+        duration: 0
+      }).add({
+        translateX: '0%',
+        opacity: {
+          value: 1,
+          duration: 700
+        },
+        delay: function delay(t, i) {
+          return i * 100 + 100;
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          open = _props.open,
+          t = _props.t;
+
+
+      return external__react__default.a.createElement(
+        'div',
+        { className: external__classnames__default()(menu_default.a.container, open ? menu_default.a.open : '') },
+        external__react__default.a.createElement(
+          'div',
+          { className: menu_default.a.dropdown },
+          external__react__default.a.createElement(
+            'ul',
+            { ref: function ref(c) {
+                return _this2.ul = c;
+              } },
+            external__react__default.a.createElement(
+              'li',
+              null,
+              external__react__default.a.createElement(
+                'a',
+                null,
+                t.aboutUs
+              )
+            ),
+            external__react__default.a.createElement(
+              'li',
+              null,
+              external__react__default.a.createElement(
+                'a',
+                null,
+                t.specialField
+              )
+            ),
+            external__react__default.a.createElement(
+              'li',
+              null,
+              external__react__default.a.createElement(
+                'a',
+                null,
+                t.projects
+              )
+            ),
+            external__react__default.a.createElement(
+              'li',
+              null,
+              external__react__default.a.createElement(
+                'a',
+                null,
+                t.partners
+              )
+            ),
+            external__react__default.a.createElement(
+              'li',
+              null,
+              external__react__default.a.createElement(
+                'a',
+                null,
+                t.employees
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Menu;
+}(external__react_["Component"]);
+
+/* harmony default export */ var menu_menu = (menu_Menu);
+// CONCATENATED MODULE: ./components/menu/index.js
+
+// EXTERNAL MODULE: external "react-waypoint"
+var external__react_waypoint_ = __webpack_require__(20);
+var external__react_waypoint__default = /*#__PURE__*/__webpack_require__.n(external__react_waypoint_);
+
+// EXTERNAL MODULE: external "shortid"
+var external__shortid_ = __webpack_require__(21);
+var external__shortid__default = /*#__PURE__*/__webpack_require__.n(external__shortid_);
+
+// EXTERNAL MODULE: ./components/section/section.css
+var section_section = __webpack_require__(22);
+var section_default = /*#__PURE__*/__webpack_require__.n(section_section);
+
+// CONCATENATED MODULE: ./components/section/section.js
+var section__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function section__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function section__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function section__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+var section_Section = function (_Component) {
+  section__inherits(Section, _Component);
+
+  function Section(props) {
+    section__classCallCheck(this, Section);
+
+    var _this = section__possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
+
+    _this.onEnter = _this.onEnter.bind(_this);
+    _this.tl = null;
+    _this.hasAnimated = false;
+    return _this;
+  }
+
+  section__createClass(Section, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.tl = external__animejs__default.a.timeline();
+    }
+  }, {
+    key: 'onEnter',
+    value: function onEnter(_ref) {
+      var currentPosition = _ref.currentPosition,
+          previousPosition = _ref.previousPosition;
+
+      if (this.hasAnimated === false) {
+        this.tl.add({
+          targets: this.imgContainer,
+          duration: 0,
+          translateX: this.props.switch ? -100 : 100
+        }).add({
+          targets: [this.content.children[0], this.content.children[1]],
+          duration: 2000,
+          easing: 'easeOutQuint',
+          delay: function delay(t, i) {
+            return i * 100 + 200;
+          },
+          translateY: -50,
+          opacity: [0, 1]
+        }).add({
+          targets: this.imgContainer,
+          offset: '-=1200', // Starts 1000ms before the previous animation ends
+          duration: 1200,
+          easing: 'easeOutQuint',
+          delay: function delay(t, i) {
+            return i * 100 + 100;
+          },
+          translateX: 0,
+          opacity: [0, 1]
+        });
+
+        this.hasAnimated = true;
+      }
+    }
+
+    /**
+     * Renders section content
+     *
+     * @param {Boolean} isVisible
+     */
+
+  }, {
+    key: 'renderText',
+    value: function renderText() {
+      var _this2 = this;
+
+      var _props = this.props,
+          title = _props.title,
+          desc = _props.desc,
+          img = _props.img,
+          id = _props.id,
+          children = _props.children;
+
+
+      return external__react__default.a.createElement(
+        'div',
+        {
+          className: external__classnames__default()('section-' + id, section_default.a.contentContainer),
+          key: external__shortid__default.a.generate(),
+          ref: function ref(r) {
+            return _this2.content = r;
+          }
+        },
+        children
+      );
+    }
+  }, {
+    key: 'renderImage',
+    value: function renderImage() {
+      var _this3 = this;
+
+      var _props2 = this.props,
+          img = _props2.img,
+          title = _props2.title;
+
+
+      return external__react__default.a.createElement(
+        'div',
+        {
+          key: external__shortid__default.a.generate(),
+          ref: function ref(r) {
+            return _this3.imgContainer = r;
+          },
+          className: external__classnames__default()(this.props.switch ? section_default.a.imgContainerLeft : section_default.a.imgContainer, section_default.a.imgDefaultContainers)
+        },
+        external__react__default.a.createElement('img', { src: img, alt: title })
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props3 = this.props,
+          img = _props3.img,
+          title = _props3.title,
+          id = _props3.id;
+
+      return external__react__default.a.createElement(
+        'section',
+        { className: external__classnames__default()('section-' + id, this.props.switch ? section_default.a.odd : '') },
+        external__react__default.a.createElement(
+          external__react_waypoint__default.a,
+          { onEnter: this.onEnter, bottomOffset: '100px' },
+          external__react__default.a.createElement(
+            'div',
+            { className: external__classnames__default()(section_default.a.container, 'container') },
+            external__react__default.a.createElement(
+              external__react_responsive__default.a,
+              { query: '(max-width: 1023px)' },
+              [this.renderText(), this.renderImage()]
+            ),
+            external__react__default.a.createElement(
+              external__react_responsive__default.a,
+              { query: '(min-width: 1024px)' },
+              this.props.switch ? [this.renderImage(), this.renderText()] : [this.renderText(), this.renderImage()]
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Section;
+}(external__react_["Component"]);
+
+/* harmony default export */ var components_section_section = (section_Section);
+// CONCATENATED MODULE: ./components/section/index.js
+
+// EXTERNAL MODULE: ./components/footer/footer.css
+var footer = __webpack_require__(23);
+var footer_default = /*#__PURE__*/__webpack_require__.n(footer);
+
+// CONCATENATED MODULE: ./components/footer/footer.js
+var footer__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function footer__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function footer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function footer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var footer_Footer = function (_Component) {
+  footer__inherits(Footer, _Component);
+
+  function Footer() {
+    footer__classCallCheck(this, Footer);
+
+    return footer__possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+  }
+
+  footer__createClass(Footer, [{
+    key: 'render',
+    value: function render() {
+      var t = this.props.t;
+
+
+      return external__react__default.a.createElement(
+        'footer',
+        { className: footer_default.a.container },
+        external__react__default.a.createElement(
+          'div',
+          { className: 'container' },
+          external__react__default.a.createElement(
+            'div',
+            { className: 'content has-text-centered' },
+            external__react__default.a.createElement(
+              'p',
+              null,
+              external__react__default.a.createElement(
+                'strong',
+                null,
+                'Straumverk ehf.'
+              ),
+              ' \xB7 Netfang:',
+              ' ',
+              external__react__default.a.createElement(
+                'a',
+                { href: 'mailto:straumverk@straumverk.is' },
+                'straumverk@straumverk.is'
+              ),
+              ' \xB7 Kt.640517-0500 \xB7 Vsk.129428 \xB7 S\xEDmi: ',
+              external__react__default.a.createElement(
+                'a',
+                { href: 'tel:+3548884070' },
+                '888-4070'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Footer;
+}(external__react_["Component"]);
+
+/* harmony default export */ var footer_footer = (footer_Footer);
+// CONCATENATED MODULE: ./components/footer/index.js
+
+// EXTERNAL MODULE: external "isomorphic-unfetch"
+var external__isomorphic_unfetch_ = __webpack_require__(24);
+var external__isomorphic_unfetch__default = /*#__PURE__*/__webpack_require__.n(external__isomorphic_unfetch_);
+
+// CONCATENATED MODULE: ./pages/index.js
+
+
+var pages__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+
+
+function pages__asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function pages__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function pages__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function pages__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var pages_Index = function (_Component) {
+  pages__inherits(Index, _Component);
+
+  function Index() {
+    pages__classCallCheck(this, Index);
+
+    return pages__possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).apply(this, arguments));
+  }
+
+  pages__createClass(Index, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -1902,227 +1459,130 @@ var Index = function (_Component) {
         desc: t.contactDesc
       }];
 
-      return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+      return external__react__default.a.createElement(
         'div',
         {
-          className: 'jsx-1072911852',
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 52
-          }
+          className: 'jsx-1072911852'
         },
-        __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_3_next_head___default.a,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 53
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+        external__react__default.a.createElement(
+          head__default.a,
+          null,
+          external__react__default.a.createElement(
             'title',
             {
-              className: 'jsx-1072911852',
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 54
-              }
+              className: 'jsx-1072911852'
             },
             'Straumverk'
           ),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement('meta', { name: 'viewport', content: 'initial-scale=1.0, width=device-width', className: 'jsx-1072911852',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 55
-            }
+          external__react__default.a.createElement('meta', { name: 'viewport', content: 'initial-scale=1.0, width=device-width', className: 'jsx-1072911852'
           }),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/css/bulma.min.css', className: 'jsx-1072911852',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 56
-            }
+          external__react__default.a.createElement('link', { rel: 'stylesheet', href: '/static/css/bulma.min.css', className: 'jsx-1072911852'
           }),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/css/base.css', className: 'jsx-1072911852',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 57
-            }
+          external__react__default.a.createElement('link', { rel: 'stylesheet', href: '/static/css/base.css', className: 'jsx-1072911852'
           }),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/css/style.css', className: 'jsx-1072911852',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 58
-            }
+           true ? external__react__default.a.createElement('link', { rel: 'stylesheet', href: '/_next/static/style.css', className: 'jsx-1072911852'
+          }) : React.createElement('link', { rel: 'stylesheet', href: '/static/css/style.css', className: 'jsx-1072911852'
           })
         ),
-        __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+        external__react__default.a.createElement(
           'main',
           {
-            className: 'jsx-1072911852',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 60
-            }
+            className: 'jsx-1072911852'
           },
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_navigation__["a" /* default */], { t: t, lang: lang, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 61
-            }
-          }),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_menu__["a" /* default */], { open: menuOpen, t: t, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 62
-            }
-          }),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__components_slider__["a" /* default */], { slides: slides, t: t, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 63
-            }
-          }),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_12__components_section__["a" /* default */],
-            { img: '/static/img/electric3.jpg', id: 1, 'switch': true, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 65
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+          external__react__default.a.createElement(navigation_navigation, { t: t, lang: lang }),
+          external__react__default.a.createElement(menu_menu, { open: menuOpen, t: t }),
+          external__react__default.a.createElement(slider_slider, { slides: slides, t: t }),
+          external__react__default.a.createElement(
+            components_section_section,
+            { img: '/static/img/electric3.jpg', id: 1, 'switch': true },
+            external__react__default.a.createElement(
               'h2',
               {
-                className: 'jsx-1072911852',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 66
-                }
+                className: 'jsx-1072911852'
               },
               t.operations
             ),
-            __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+            external__react__default.a.createElement(
               'p',
               {
-                className: 'jsx-1072911852',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 67
-                }
+                className: 'jsx-1072911852'
               },
               t.operationsDesc
             )
           ),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_12__components_section__["a" /* default */],
-            { img: '/static/img/electric1.jpg', id: 2, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 69
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+          external__react__default.a.createElement(
+            components_section_section,
+            { img: '/static/img/electric1.jpg', id: 2 },
+            external__react__default.a.createElement(
               'h2',
               {
-                className: 'jsx-1072911852',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 70
-                }
+                className: 'jsx-1072911852'
               },
               t.aboutus
             ),
-            __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+            external__react__default.a.createElement(
               'p',
               {
-                className: 'jsx-1072911852',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 71
-                }
+                className: 'jsx-1072911852'
               },
               t.aboutusDesc
             )
           ),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_12__components_section__["a" /* default */],
-            { img: '/static/img/electric2.jpg', id: 3, 'switch': true, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 73
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+          external__react__default.a.createElement(
+            components_section_section,
+            { img: '/static/img/electric2.jpg', id: 3, 'switch': true },
+            external__react__default.a.createElement(
               'h2',
               {
-                className: 'jsx-1072911852',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 74
-                }
+                className: 'jsx-1072911852'
               },
               t.contact
             ),
-            __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement('p', {
+            external__react__default.a.createElement('p', {
               dangerouslySetInnerHTML: {
                 __html: t.contactDesc
               },
-              className: 'jsx-1072911852',
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 75
-              }
+              className: 'jsx-1072911852'
             }),
-            __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+            external__react__default.a.createElement(
               'div',
               {
-                className: 'jsx-1072911852' + ' ' + 'has-text-centered',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 80
-                }
+                className: 'jsx-1072911852' + ' ' + 'has-text-centered'
               },
-              __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
+              external__react__default.a.createElement(
                 'a',
-                { href: 'mailto:straumverk@straumverk.is', className: 'jsx-1072911852',
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 81
-                  }
+                { href: 'mailto:straumverk@straumverk.is', className: 'jsx-1072911852'
                 },
-                __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_13__components_button__["a" /* default */],
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 82
-                    }
-                  },
+                external__react__default.a.createElement(
+                  components_button_button,
+                  null,
                   t.contact
                 )
               )
             )
           ),
-          __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14__components_footer__["a" /* default */], { t: t, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 86
-            }
-          })
+          external__react__default.a.createElement(footer_footer, { t: t })
         ),
-        __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_styled_jsx_style___default.a, {
+        external__react__default.a.createElement(style__default.a, {
           styleId: '1072911852',
-          css: 'body{padding-top:3.25rem;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXVGMkIsQUFHaUMsb0JBQ3RCIiwiZmlsZSI6InBhZ2VzL2luZGV4LmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9zbmFlcnRob3JvZGRzc29uL1Byb2plY3RzL3N0cmF1bXZlcmtfbmV3Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCc7XG5pbXBvcnQgeyBiaW5kQWN0aW9uQ3JlYXRvcnMgfSBmcm9tICdyZWR1eCc7XG5pbXBvcnQgd2l0aFJlZHV4IGZyb20gJ25leHQtcmVkdXgtd3JhcHBlcic7XG5pbXBvcnQgeyBzZXRUcmFuc2xhdGlvbnMgfSBmcm9tICcuLi9jb21tb24vYWN0aW9ucyc7XG5pbXBvcnQgeyBTRVRfTEFORyB9IGZyb20gJy4uL2NvbW1vbi90eXBlcyc7XG5pbXBvcnQgY29uZmlndXJlU3RvcmUgZnJvbSAnLi4vY29tbW9uL3N0b3JlJztcbmltcG9ydCBOYXZpZ2F0aW9uIGZyb20gJy4uL2NvbXBvbmVudHMvbmF2aWdhdGlvbic7XG5pbXBvcnQgU2xpZGVyIGZyb20gJy4uL2NvbXBvbmVudHMvc2xpZGVyJztcbmltcG9ydCBNZW51IGZyb20gJy4uL2NvbXBvbmVudHMvbWVudSc7XG5pbXBvcnQgU2VjdGlvbiBmcm9tICcuLi9jb21wb25lbnRzL3NlY3Rpb24nO1xuaW1wb3J0IEJ1dHRvbiBmcm9tICcuLi9jb21wb25lbnRzL2J1dHRvbic7XG5pbXBvcnQgRm9vdGVyIGZyb20gJy4uL2NvbXBvbmVudHMvZm9vdGVyJztcbmltcG9ydCAnaXNvbW9ycGhpYy11bmZldGNoJztcblxuY2xhc3MgSW5kZXggZXh0ZW5kcyBDb21wb25lbnQge1xuICBzdGF0aWMgYXN5bmMgZ2V0SW5pdGlhbFByb3BzKHsgcmVxLCBzdG9yZSB9KSB7XG4gICAgY29uc3QgbGFuZyA9IHJlcS5jb29raWVzICYmIHJlcS5jb29raWVzLmxhbmcgPyByZXEuY29va2llcy5sYW5nIDogJ2lzJztcbiAgICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaChgJHtwcm9jZXNzLmVudi5MT0NBTF9VUkx9L3N0YXRpYy9sYW5nLyR7bGFuZ30uanNvbmApO1xuICAgIGNvbnN0IGpzb24gPSBhd2FpdCByZXMuanNvbigpO1xuICAgIGNvbnN0IHBheWxvYWQgPSB7XG4gICAgICBsYW5nLFxuICAgICAgdHJhbnNsYXRpb25zOiBqc29uLFxuICAgIH07XG5cbiAgICBzdG9yZS5kaXNwYXRjaCh7IHR5cGU6IFNFVF9MQU5HLCBwYXlsb2FkIH0pO1xuICAgIHJldHVybiB7IHQ6IGpzb24sIGxhbmcgfTtcbiAgfVxuXG4gIHJlbmRlcigpIHtcbiAgICBjb25zdCB7IHQsIGxhbmcsIG1lbnVPcGVuIH0gPSB0aGlzLnByb3BzO1xuXG4gICAgY29uc3Qgc2xpZGVzID0gW1xuICAgICAge1xuICAgICAgICBpbWFnZTogJy9zdGF0aWMvaW1nL2VsZWN0cmljMy5qcGcnLFxuICAgICAgICB0aXRsZTogJ1N0cmF1bXZlcmsnLFxuICAgICAgICBkZXNjOiAnQWxsdCBzZW0gw77DuiDDvmFyZnQgw6EgZWludW0gc3Rhw7AnLFxuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgaW1hZ2U6ICcvc3RhdGljL2ltZy9lbGVjdHJpYzEuanBnJyxcbiAgICAgICAgdGl0bGU6IHQub3BlcmF0aW9ucyxcbiAgICAgICAgZGVzYzogdC5zcGVjaWFsRmllbGRTaG9ydERlc2MsXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBpbWFnZTogJy9zdGF0aWMvaW1nL2VsZWN0cmljMi5qcGcnLFxuICAgICAgICB0aXRsZTogdC5jb250YWN0LFxuICAgICAgICBkZXNjOiB0LmNvbnRhY3REZXNjLFxuICAgICAgfSxcbiAgICBdO1xuXG4gICAgcmV0dXJuIChcbiAgICAgIDxkaXY+XG4gICAgICAgIDxIZWFkPlxuICAgICAgICAgIDx0aXRsZT5TdHJhdW12ZXJrPC90aXRsZT5cbiAgICAgICAgICA8bWV0YSBuYW1lPVwidmlld3BvcnRcIiBjb250ZW50PVwiaW5pdGlhbC1zY2FsZT0xLjAsIHdpZHRoPWRldmljZS13aWR0aFwiIC8+XG4gICAgICAgICAgPGxpbmsgcmVsPVwic3R5bGVzaGVldFwiIGhyZWY9XCIvc3RhdGljL2Nzcy9idWxtYS5taW4uY3NzXCIgLz5cbiAgICAgICAgICA8bGluayByZWw9XCJzdHlsZXNoZWV0XCIgaHJlZj1cIi9zdGF0aWMvY3NzL2Jhc2UuY3NzXCIgLz5cbiAgICAgICAgICA8bGluayByZWw9XCJzdHlsZXNoZWV0XCIgaHJlZj1cIi9zdGF0aWMvY3NzL3N0eWxlLmNzc1wiIC8+XG4gICAgICAgIDwvSGVhZD5cbiAgICAgICAgPG1haW4+XG4gICAgICAgICAgPE5hdmlnYXRpb24gdD17dH0gbGFuZz17bGFuZ30gLz5cbiAgICAgICAgICA8TWVudSBvcGVuPXttZW51T3Blbn0gdD17dH0gLz5cbiAgICAgICAgICA8U2xpZGVyIHNsaWRlcz17c2xpZGVzfSB0PXt0fSAvPlxuXG4gICAgICAgICAgPFNlY3Rpb24gaW1nPVwiL3N0YXRpYy9pbWcvZWxlY3RyaWMzLmpwZ1wiIGlkPXsxfSBzd2l0Y2g+XG4gICAgICAgICAgICA8aDI+e3Qub3BlcmF0aW9uc308L2gyPlxuICAgICAgICAgICAgPHA+e3Qub3BlcmF0aW9uc0Rlc2N9PC9wPlxuICAgICAgICAgIDwvU2VjdGlvbj5cbiAgICAgICAgICA8U2VjdGlvbiBpbWc9XCIvc3RhdGljL2ltZy9lbGVjdHJpYzEuanBnXCIgaWQ9ezJ9PlxuICAgICAgICAgICAgPGgyPnt0LmFib3V0dXN9PC9oMj5cbiAgICAgICAgICAgIDxwPnt0LmFib3V0dXNEZXNjfTwvcD5cbiAgICAgICAgICA8L1NlY3Rpb24+XG4gICAgICAgICAgPFNlY3Rpb24gaW1nPVwiL3N0YXRpYy9pbWcvZWxlY3RyaWMyLmpwZ1wiIGlkPXszfSBzd2l0Y2g+XG4gICAgICAgICAgICA8aDI+e3QuY29udGFjdH08L2gyPlxuICAgICAgICAgICAgPHBcbiAgICAgICAgICAgICAgZGFuZ2Vyb3VzbHlTZXRJbm5lckhUTUw9e3tcbiAgICAgICAgICAgICAgICBfX2h0bWw6IHQuY29udGFjdERlc2MsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAvPlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJoYXMtdGV4dC1jZW50ZXJlZFwiPlxuICAgICAgICAgICAgICA8YSBocmVmPVwibWFpbHRvOnN0cmF1bXZlcmtAc3RyYXVtdmVyay5pc1wiPlxuICAgICAgICAgICAgICAgIDxCdXR0b24+e3QuY29udGFjdH08L0J1dHRvbj5cbiAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9TZWN0aW9uPlxuICAgICAgICAgIDxGb290ZXIgdD17dH0gLz5cbiAgICAgICAgPC9tYWluPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIGJvZHkge1xuICAgICAgICAgICAgcGFkZGluZy10b3A6IDMuMjVyZW07XG4gICAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICA8L2Rpdj5cbiAgICApO1xuICB9XG59XG5cbi8qKlxuICogTWFwcyByZWR1eCBzdGF0ZSB0byBwcm9wc1xuICpcbiAqIEBwYXJhbSB7T2JqZWN0fSBzdGF0ZVxuICovXG5mdW5jdGlvbiBtYXBTdGF0ZVRvUHJvcHMoc3RhdGUpIHtcbiAgY29uc3QgeyB0cmFuc2xhdGlvbnMsIGxhbmcsIG1lbnVPcGVuIH0gPSBzdGF0ZS5jb21tb247XG4gIHJldHVybiB7XG4gICAgdDogdHJhbnNsYXRpb25zLFxuICAgIGxhbmcsXG4gICAgbWVudU9wZW4sXG4gIH07XG59XG5cbi8qKlxuICogTWFwcyBkaXNwYXRjaCB0byBwcm9wc1xuICpcbiAqIEBwYXJhbSB7T2JqZWN0fSBzdGF0ZVxuICovXG5mdW5jdGlvbiBtYXBEaXNwYXRjaFRvUHJvcHMoZGlzcGF0Y2gpIHtcbiAgcmV0dXJuIHtcbiAgICBzZXRUcmFuc2xhdGlvbnM6IGJpbmRBY3Rpb25DcmVhdG9ycyhzZXRUcmFuc2xhdGlvbnMsIGRpc3BhdGNoKSxcbiAgfTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgd2l0aFJlZHV4KGNvbmZpZ3VyZVN0b3JlLCBtYXBTdGF0ZVRvUHJvcHMsIG1hcERpc3BhdGNoVG9Qcm9wcykoSW5kZXgpO1xuIl19 */\n/*@ sourceURL=pages/index.js */'
+          css: ['body{padding-top:3.25rem;}']
         })
       );
     }
   }], [{
     key: 'getInitialProps',
     value: function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
+      var _ref2 = pages__asyncToGenerator( /*#__PURE__*/regenerator__default.a.mark(function _callee(_ref) {
         var req = _ref.req,
             store = _ref.store;
         var lang, res, json, payload;
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        return regenerator__default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 lang = req.cookies && req.cookies.lang ? req.cookies.lang : 'is';
                 _context.next = 3;
-                return fetch("http://localhost:3000" + '/static/lang/' + lang + '.json');
+                return fetch("http://138.68.191.12:8000" + '/static/lang/' + lang + '.json');
 
               case 3:
                 res = _context.sent;
@@ -2137,7 +1597,7 @@ var Index = function (_Component) {
                 };
 
 
-                store.dispatch({ type: __WEBPACK_IMPORTED_MODULE_7__common_types__["a" /* SET_LANG */], payload: payload });
+                store.dispatch({ type: SET_LANG, payload: payload });
                 return _context.abrupt('return', { t: json, lang: lang });
 
               case 10:
@@ -2157,7 +1617,7 @@ var Index = function (_Component) {
   }]);
 
   return Index;
-}(__WEBPACK_IMPORTED_MODULE_2_react__["Component"]);
+}(external__react_["Component"]);
 
 /**
  * Maps redux state to props
@@ -2166,7 +1626,7 @@ var Index = function (_Component) {
  */
 
 
-function mapStateToProps(state) {
+function pages_mapStateToProps(state) {
   var _state$common = state.common,
       translations = _state$common.translations,
       lang = _state$common.lang,
@@ -2184,142 +1644,137 @@ function mapStateToProps(state) {
  *
  * @param {Object} state
  */
-function mapDispatchToProps(dispatch) {
+function pages_mapDispatchToProps(dispatch) {
   return {
-    setTranslations: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_6__common_actions__["b" /* setTranslations */], dispatch)
+    setTranslations: Object(external__redux_["bindActionCreators"])(setTranslations, dispatch)
   };
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_5_next_redux_wrapper___default()(__WEBPACK_IMPORTED_MODULE_8__common_store__["a" /* default */], mapStateToProps, mapDispatchToProps)(Index));
+/* harmony default export */ var pages = __webpack_exports__["default"] = (external__next_redux_wrapper__default()(configureStore, pages_mapStateToProps, pages_mapDispatchToProps)(pages_Index));
 
 /***/ }),
-
-/***/ 2:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/index.js");
-
-
-/***/ }),
-
-/***/ "animejs":
+/* 10 */
 /***/ (function(module, exports) {
 
-module.exports = require("animejs");
+module.exports = require("styled-jsx/style");
 
 /***/ }),
-
-/***/ "axios":
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
-
-/***/ "babel-runtime/regenerator":
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/regenerator");
-
-/***/ }),
-
-/***/ "classnames":
-/***/ (function(module, exports) {
-
-module.exports = require("classnames");
-
-/***/ }),
-
-/***/ "isomorphic-unfetch":
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-unfetch");
-
-/***/ }),
-
-/***/ "next-redux-wrapper":
-/***/ (function(module, exports) {
-
-module.exports = require("next-redux-wrapper");
-
-/***/ }),
-
-/***/ "next/head":
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
 
 /***/ }),
-
-/***/ "next/link":
+/* 12 */
 /***/ (function(module, exports) {
 
-module.exports = require("next/link");
+module.exports = require("next-redux-wrapper");
 
 /***/ }),
-
-/***/ "prop-types":
+/* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("prop-types");
+module.exports = require("axios");
 
 /***/ }),
-
-/***/ "react":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-redux":
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-
-/***/ "react-responsive":
-/***/ (function(module, exports) {
-
-module.exports = require("react-responsive");
-
-/***/ }),
-
-/***/ "react-waypoint":
-/***/ (function(module, exports) {
-
-module.exports = require("react-waypoint");
-
-/***/ }),
-
-/***/ "redux":
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-
-/***/ "redux-thunk":
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
+/* 15 */
+/***/ (function(module, exports) {
 
-/***/ "shortid":
+module.exports = require("react-redux");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"navbarBackground": "_1uJmI3JZwfT7nT7555uYNM",
+	"shadow": "_3dYmPzS0-NNJeZMBHbjznA",
+	"menu": "_3wP7k_DrMZUIccMkqnK2CT",
+	"navbarBrand": "_27_b-RfrL5QPVN5U6sEIDK",
+	"logo": "_1N4Apt69c24EowW2A17mtF",
+	"mobileItemContainer": "_2O7r4deNmK_QSxsdCCMkR9"
+};
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"button": "_7lCAZ3L8bd8-DLnlo_N6u"
+};
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"slideshow": "_3mQAG8KB_bTN-ppYA_RS4E",
+	"slides": "v6Cc8nV4cP2a7HVfVzxMD",
+	"svgFrame": "Yy2eMgoeyk6OpooEeF88u",
+	"slide": "_1Mw7gSBLrCdMrkr9HK5Str",
+	"current": "_1Z4SR4Hn6p958JTUkn282g",
+	"img": "_320OsCHVLvOknYZsr7JWfa",
+	"overlay": "_3ZKoUq4Q5yljaqWBYi1jyl",
+	"slidenav": "SCd8CrIC7JWbM1B4H69B4",
+	"item": "_34xqVmIiHzF0IkoWYcg9FJ",
+	"title": "_3MoNsIAcgW_HZDgLdNr3v3",
+	"desc": "mKABq8Hn469vnYqXNRhKP",
+	"link": "_1qQuNit2FEpmov8hG7w8S_"
+};
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"container": "_3gaHK69gNcc-UPrlB3V_29",
+	"open": "_3fSFQBiayPDugr0-dBRL3F",
+	"dropdown": "_1zNxHTZcC_Ed7qGzl4h4BA",
+	"active": "rB7o2U1kUzFmsV0dtICiv"
+};
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-waypoint");
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("shortid");
 
 /***/ }),
-
-/***/ "styled-jsx/style":
+/* 22 */
 /***/ (function(module, exports) {
 
-module.exports = require("styled-jsx/style");
+module.exports = {
+	"container": "_1Z5oshflTfpw5zMbBL0Dfr",
+	"odd": "C1T1uxQcE9pt19x-ss3r-",
+	"contentContainer": "DX1yhGKowsH2fgmHY_uZi",
+	"imgDefaultContainers": "_37FObub0x0KYZK3CkOeYQm"
+};
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"container": "_1uYiT3lVTswiNlYVkzx3mm"
+};
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
 
 /***/ })
-
-/******/ });
-//# sourceMappingURL=index.js.map
+/******/ ]);

@@ -1,13 +1,14 @@
 {
-  "name": "new_nordic",
+  "name": "straumverk",
   "version": "1.0.0",
-  "description": "New nordic website",
+  "description": "Straumverk website",
   "main": "index.js",
   "scripts": {
-    "dev": "node server",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start -p 5000",
-    "clean": "rimraf .next"
+    "start": "next start -p 8000",
+    "clean": "rimraf .next",
+    "pm2": "pm2 start pm2.json"
   },
   "author": "Snær Seljan Þórodddson",
   "license": "ISC",
