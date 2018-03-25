@@ -220,7 +220,7 @@ button {
   --color-nav: #000;
   --color-nav-hover: #6c63ff;
 }
-
+a:hover,
 a.navbar-item.is-active,
 a.navbar-item:hover,
 a.navbar-link.is-active,

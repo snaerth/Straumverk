@@ -1,10 +1,9 @@
 {
   "specialField": "Fagsvið",
   "specialFieldShortDesc":
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "Straumverk tekur að sér Almennar raflagnir, Nýlagnir, Töflusmíði, Símalagnir og Netlagnir",
   "specialFieldDesc":
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  "specialFieldLink": "Skoða nánar",
   "projects": "Verkefni",
   "projectsShortDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   "projectsDesc":
@@ -25,5 +24,6 @@
   "operationsDesc":
     "Straumverk tekur að sér Almennar raflagnir, Nýlagnir, Töflusmíði, Símalagnir og Netlagnir. Við höfum líka reynslu af vinnu við Iðnstýringar og raflagnir í skipum og bátum einnig. Hafðu samband og við gerum þér tilboð að kostaðarlausu.",
   "contact": "Hafðu samband",
-  "contactDesc": "Hægt er að hafa samband í síma 888-4070 eða í gegnum straumverk@straumverk.is."
+  "contactDesc":
+    "Hægt er að hafa samband í síma <a href='tel:+3548884070'>888-4070</a><br/> eða í gegnum <a href='mailto:straumverk@straumverk.is'>straumverk@straumverk.is</a>"
 }

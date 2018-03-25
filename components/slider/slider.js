@@ -244,7 +244,12 @@ class Slider extends Component {
           </div>
 
           <h2 className={s.title}>{title}</h2>
-          <p className={s.desc}>{desc}</p>
+          <p
+            className={s.desc}
+            dangerouslySetInnerHTML={{
+              __html: desc,
+            }}
+          />
           {link ? <Button>{link}</Button> : null}
         </div>
       );

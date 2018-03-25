@@ -32,7 +32,7 @@ class Index extends Component {
 
     const slides = [
       {
-        image: '/static/img/electric1.jpg',
+        image: '/static/img/electric3.jpg',
         title: 'Straumverk',
         desc: 'Allt sem þú þarft á einum stað',
       },
@@ -40,10 +40,9 @@ class Index extends Component {
         image: '/static/img/electric1.jpg',
         title: t.operations,
         desc: t.specialFieldShortDesc,
-        link: t.specialFieldLink,
       },
       {
-        image: '/static/img/electric4.jpg',
+        image: '/static/img/electric2.jpg',
         title: t.contact,
         desc: t.contactDesc,
       },
@@ -63,17 +62,21 @@ class Index extends Component {
           <Menu open={menuOpen} t={t} />
           <Slider slides={slides} t={t} />
 
-          <Section img="/static/img/electric4.jpg" id={1} switch>
+          <Section img="/static/img/electric3.jpg" id={1} switch>
             <h2>{t.operations}</h2>
             <p>{t.operationsDesc}</p>
           </Section>
-          <Section img="/static/img/28.jpg" id={2}>
+          <Section img="/static/img/electric1.jpg" id={2}>
             <h2>{t.aboutus}</h2>
             <p>{t.aboutusDesc}</p>
           </Section>
           <Section img="/static/img/electric2.jpg" id={3} switch>
             <h2>{t.contact}</h2>
-            <p>{t.contactDesc}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t.contactDesc,
+              }}
+            />
             <div className="has-text-centered">
               <a href="mailto:straumverk@straumverk.is">
                 <Button>{t.contact}</Button>
