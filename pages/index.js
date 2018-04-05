@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 import { bindActionCreators } from 'redux';
 import withRedux from 'next-redux-wrapper';
+import Favicons from '../components/favicons';
 import { setTranslations } from '../common/actions';
 import { SET_LANG } from '../common/types';
 import configureStore from '../common/store';
@@ -32,17 +33,17 @@ class Index extends Component {
 
     const slides = [
       {
-        image: '/static/img/electric3.jpg',
+        image: '/static/img/electric6.jpg',
         title: 'Straumverk',
-        desc: 'Allt sem þú þarft á einum stað',
+        desc: 'Traustir rafverktakar',
       },
       {
-        image: '/static/img/electric1.jpg',
+        image: '/static/img/electric4.jpg',
         title: t.operations,
         desc: t.specialFieldShortDesc,
       },
       {
-        image: '/static/img/electric2.jpg',
+        image: '/static/img/electric12.jpg',
         title: t.contact,
         desc: t.contactDesc,
       },
@@ -52,6 +53,11 @@ class Index extends Component {
       <div>
         <Head>
           <title>Straumverk</title>
+          <Favicons />
+          <meta
+            name="description"
+            content="Straumverk ehf. - Rafvirkjar sem sjáum uppsetningu eða viðhald á almennar raflagnir, Nýlagnir, Töflusmíði, Símalagnir og Netlagnir"
+          />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="/static/css/bulma.min.css" />
           <link rel="stylesheet" href="/static/css/base.css" />
@@ -66,15 +72,15 @@ class Index extends Component {
           <Menu open={menuOpen} t={t} />
           <Slider slides={slides} t={t} />
 
-          <Section img="/static/img/electric3.jpg" id={1} switch>
+          <Section img="/static/img/electric9.jpg" id={1} switch>
             <h2>{t.operations}</h2>
             <p>{t.operationsDesc}</p>
           </Section>
-          <Section img="/static/img/electric1.jpg" id={2}>
+          <Section img="/static/img/electric10.jpg" id={2}>
             <h2>{t.aboutus}</h2>
             <p>{t.aboutusDesc}</p>
           </Section>
-          <Section img="/static/img/electric2.jpg" id={3} switch>
+          <Section img="/static/img/electric8.jpg" id={3} switch>
             <h2>{t.contact}</h2>
             <p
               dangerouslySetInnerHTML={{

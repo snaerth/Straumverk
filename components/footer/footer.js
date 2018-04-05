@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Facebook from '../facebook';
 import s from './footer.css';
 
 class Footer extends Component {
