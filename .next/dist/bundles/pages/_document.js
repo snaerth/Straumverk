@@ -67,25 +67,24 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 28);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "/Users/snaerthoroddsson/Projects/straumverk_new/node_modules/next/dist/pages/_document.js":
+/***/ 28:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(29);
+
+
+/***/ }),
+
+/***/ 29:
 /***/ (function(module, exports) {
 
 module.exports = require("/Users/snaerthoroddsson/Projects/straumverk_new/node_modules/next/dist/pages/_document.js");
 
-/***/ }),
-
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("/Users/snaerthoroddsson/Projects/straumverk_new/node_modules/next/dist/pages/_document.js");
-
-
 /***/ })
 
 /******/ });
-//# sourceMappingURL=_document.js.map
