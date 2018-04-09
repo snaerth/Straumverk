@@ -16,11 +16,13 @@ class Section extends Component {
   }
 
   componentDidMount() {
-    this.tl = anime.timeline();
+    if (window.innerWidth >= 768) {
+      this.tl = anime.timeline();
+    }
   }
 
   onEnter({ currentPosition, previousPosition }) {
-    if (this.hasAnimated === false) {
+    if (this.hasAnimated === false && window.innerWidth >= 768) {
       this.tl
         .add({
           targets: this.imgContainer,
